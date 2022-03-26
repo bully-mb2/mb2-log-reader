@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="PlayerSlotType" final="restriction">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="31"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TeamType" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="r"/>
+            <xs:enumeration value="b"/>
+            <xs:enumeration value="s"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="GenderType" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="f"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MBClassType" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="none"/>
+            <xs:enumeration value="imperial_soldier"/>
+            <xs:enumeration value="rebel_soldier"/>
+            <xs:enumeration value="commander"/>
+            <xs:enumeration value="elite_trooper"/>
+            <xs:enumeration value="sith"/>
+            <xs:enumeration value="jedi"/>
+            <xs:enumeration value="bounty_hunter"/>
+            <xs:enumeration value="hero"/>
+            <xs:enumeration value="super_battle_droid"/>
+            <xs:enumeration value="wookie"/>
+            <xs:enumeration value="clone_trooper"/>
+            <xs:enumeration value="mandalorian"/>
+            <xs:enumeration value="arc_trooper"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ChatType" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="all"/>
+            <xs:enumeration value="team"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
