@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mb2-bully</groupId>
-    <artifactId>MBIILogToMQTT</artifactId>
+    <artifactId>mb2-log-reader</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
