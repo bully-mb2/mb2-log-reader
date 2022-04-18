@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ClientSpawnedType">
+    <xs:complexType name="ClientSpawnedEvent">
         <xs:all>
-            <xs:element name="team" type="TeamType"/>
+            <xs:element name="team" type="Team"/>
             <xs:element name="force_powers" type="xs:string"/>
             <xs:element name="ip" type="xs:string"/>
             <xs:element name="port" type="xs:integer"/>
@@ -18,7 +18,7 @@
             <xs:element name="color3" type="xs:integer"/>
             <xs:element name="color4" type="xs:integer"/>
             <xs:element name="handicap" type="xs:integer"/>
-            <xs:element name="sex" type="GenderType"/>
+            <xs:element name="sex" type="Gender"/>
             <xs:element name="cg_predict_items" type="xs:integer"/>
             <xs:element name="saber1" type="xs:string"/>
             <xs:element name="saber2" type="xs:string"/>
@@ -32,6 +32,6 @@
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="ClientSpawnedEvent" type="ClientSpawnedType"/>
+    <xs:element name="ClientSpawnedEvent" type="ClientSpawnedEvent"/>
 
 </xs:schema>

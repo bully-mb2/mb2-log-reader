@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:simpleType name="ShutdownGameType">
+    <xs:simpleType name="ShutdownGameEvent">
         <xs:restriction base="xs:integer">
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:element name="ShutdownGameEvent" type="ShutdownGameType"/>
+    <xs:element name="ShutdownGameEvent" type="ShutdownGameEvent"/>
 
 </xs:schema>

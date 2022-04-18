@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:simpleType name="PlayerSlotType" final="restriction">
+    <xs:simpleType name="PlayerSlot" final="restriction">
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="0"/>
             <xs:maxInclusive value="31"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="TeamType" final="restriction">
+    <xs:simpleType name="Team" final="restriction">
         <xs:restriction base="xs:string">
             <xs:enumeration value="r"/>
             <xs:enumeration value="b"/>
@@ -16,14 +16,14 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="GenderType" final="restriction">
+    <xs:simpleType name="Gender" final="restriction">
         <xs:restriction base="xs:string">
             <xs:enumeration value="m"/>
             <xs:enumeration value="f"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="MBClassType" final="restriction">
+    <xs:simpleType name="MBClass" final="restriction">
         <xs:restriction base="xs:string">
             <xs:enumeration value="none"/>
             <xs:enumeration value="imperial_soldier"/>
@@ -42,7 +42,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="ChatType" final="restriction">
+    <xs:simpleType name="Chat" final="restriction">
         <xs:restriction base="xs:string">
             <xs:enumeration value="all"/>
             <xs:enumeration value="team"/>

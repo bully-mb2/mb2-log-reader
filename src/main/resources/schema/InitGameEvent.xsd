@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="InitGameType">
+    <xs:complexType name="InitGameEvent">
         <xs:all>
             <xs:element name="version" type="xs:string"/>
             <xs:element name="time_limit" type="xs:integer"/>
@@ -56,6 +56,6 @@
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="InitGameEvent" type="InitGameType"/>
+    <xs:element name="InitGameEvent" type="InitGameEvent"/>
 
 </xs:schema>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="KillType">
+    <xs:complexType name="KillEvent">
         <xs:all>
             <xs:element name="killer" type="xs:integer"/>
             <xs:element name="victim" type="xs:integer"/>
@@ -11,6 +11,6 @@
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="KillEvent" type="KillType"/>
+    <xs:element name="KillEvent" type="KillEvent"/>
 
 </xs:schema>

@@ -72,3 +72,8 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+
+##############################
+## com.templars_server.Application
+##############################
+logs/

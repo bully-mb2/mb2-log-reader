@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ClientUserinfoChangedType">
+    <xs:complexType name="ClientUserinfoChangedEvent">
         <xs:all>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="team" type="TeamType"/>
+            <xs:element name="team" type="Team"/>
             <xs:element name="model" type="xs:string"/>
             <xs:element name="color1" type="xs:integer"/>
             <xs:element name="color2" type="xs:integer"/>
             <xs:element name="siegeclass" type="xs:string"/>
             <xs:element name="saber1" type="xs:string"/>
             <xs:element name="saber2" type="xs:string"/>
-            <xs:element name="desired_team" type="TeamType"/>
+            <xs:element name="desired_team" type="Team"/>
             <xs:element name="model_variant" type="xs:string"/>
             <xs:element name="saber_variant" type="xs:string"/>
-            <xs:element name="mb_class" type="MBClassType"/>
+            <xs:element name="mb_class" type="MBClass"/>
 
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="ClientUserinfoChangedEvent" type="ClientUserinfoChangedType"/>
+    <xs:element name="ClientUserinfoChangedEvent" type="ClientUserinfoChangedEvent"/>
 
 </xs:schema>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:include schemaLocation="GlobalTypes.xsd"/>
+    <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ClientConnectType">
+    <xs:complexType name="ClientConnectEvent">
         <xs:all>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="slot" type="PlayerSlotType"/>
+            <xs:element name="slot" type="PlayerSlot"/>
             <xs:element name="ip" type="xs:string"/>
             <xs:element name="port" type="xs:integer"/>
         </xs:all>
     </xs:complexType>
 
-    <xs:element name="ClientConnectEvent" type="ClientConnectType"/>
+    <xs:element name="ClientConnectEvent" type="ClientConnectEvent"/>
 
 </xs:schema>
