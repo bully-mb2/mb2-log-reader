@@ -7,13 +7,19 @@ import java.util.regex.Matcher;
 
 public class ClientBeginParser extends ParsableEvent<ClientBeginEvent> {
 
-    public ClientBeginParser(String regex) {
-        super(regex);
+    public ClientBeginParser() {
+        super("ClientBegin: ([0-9]{1,2})");
     }
 
     @Override
     protected ClientBeginEvent parseEvent(Matcher matcher) {
-        return null;
+        try {
+            ClientBeginEvent clientBeginEvent = new ClientBeginEvent();
+            clientBeginEvent.setSlot(Integer.parseInt(matcher.group(1)));
+            return clientBeginEvent;
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
 }
