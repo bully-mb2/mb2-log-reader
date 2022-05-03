@@ -1,6 +1,5 @@
 package com.templars_server.parser.MBParser;
 
-import generated.ClientBeginEvent;
 import generated.ShutdownGameEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

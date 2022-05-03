@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public abstract class MBEvent<T> {
 
-    private Pattern pattern;
+    private final Pattern pattern;
 
     public MBEvent(String regex) {
         this(Pattern.compile(regex));
