@@ -19,7 +19,7 @@ class ClientBeginParserTest {
 
     @Test
     void testParseLine_ValidLine_ExpectedSlot() {
-        int testSlot = ThreadLocalRandom.current().nextInt(0, 33);
+        int testSlot = 22;
         String testLine = "ClientBegin: " + testSlot;
 
         ClientBeginEvent actualEvent = clientBeginParser.parseLine(testLine);

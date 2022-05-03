@@ -8,7 +8,7 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="slot" type="PlayerSlot"/>
             <xs:element name="ip" type="xs:string"/>
-            <xs:element name="port" type="xs:integer"/>
+            <xs:element name="port" type="xs:int"/>
         </xs:all>
     </xs:complexType>
 
