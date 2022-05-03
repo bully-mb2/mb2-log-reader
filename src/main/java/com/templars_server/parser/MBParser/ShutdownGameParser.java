@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class ShutdownGameParser extends MBEvent<ShutdownGameEvent> {
 
     public ShutdownGameParser() {
-        super("ShutdownGame");
+        super("^ShutdownGame:$");
     }
 
     @Override

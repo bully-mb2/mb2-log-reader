@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class ClientDisconnectParser extends MBEvent<ClientDisconnectEvent> {
 
     public ClientDisconnectParser() {
-        super("ClientDisconnect: ([0-9]{1,2})");
+        super("^ClientDisconnect: ([0-9]{1,2})$");
     }
 
     @Override

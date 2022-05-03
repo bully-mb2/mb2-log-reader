@@ -36,4 +36,13 @@ class ClientDisconnectParserTest {
         assertThat(actualEvent).isNull();
     }
 
+    @Test
+    void testParseLine_InvalidLinePartiallyContainingRegex_IsNull() {
+        String testLine = "ClientUserinfoChanged: 2 n\\ClientDisconnect: 1\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
+
+        ClientDisconnectEvent actualEvent = clientDisconnectParser.parseLine(testLine);
+
+        assertThat(actualEvent).isNull();
+    }
+
 }

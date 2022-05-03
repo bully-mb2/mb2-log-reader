@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class ClientConnectParser extends MBEvent<ClientConnectEvent> {
 
     public ClientConnectParser() {
-        super("ClientConnect: \\((.*)\\) ID: ([0-9]{1,2}) \\(IP: (.*):([0-9]*)\\)");
+        super("^ClientConnect: \\((.*)\\) ID: ([0-9]{1,2}) \\(IP: (.*):([0-9]*)\\)$");
     }
 
     @Override

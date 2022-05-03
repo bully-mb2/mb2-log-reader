@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
 
     public ClientSpawnedParser() {
-        super("Player ([0-9]{1,2}) spawned with userinfo: (.*)");
+        super("^Player ([0-9]{1,2}) spawned with userinfo: (.*)$");
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 public class ClientUserinfoChangedParser extends MBEvent<ClientUserinfoChangedEvent> {
 
     public ClientUserinfoChangedParser() {
-        super("ClientUserinfoChanged: ([0-9]{1,2}) (.*)");
+        super("^ClientUserinfoChanged: ([0-9]{1,2}) (.*)$");
     }
 
     @Override

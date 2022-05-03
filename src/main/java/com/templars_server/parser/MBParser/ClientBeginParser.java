@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class ClientBeginParser extends MBEvent<ClientBeginEvent> {
 
     public ClientBeginParser() {
-        super("ClientBegin: ([0-9]{1,2})");
+        super("^ClientBegin: ([0-9]{1,2})$");
     }
 
     @Override
