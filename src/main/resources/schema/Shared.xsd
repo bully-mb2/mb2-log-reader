@@ -36,6 +36,7 @@
             <xs:enumeration value="hero"/>
             <xs:enumeration value="super_battle_droid"/>
             <xs:enumeration value="wookie"/>
+            <xs:enumeration value="droideka"/>
             <xs:enumeration value="clone_trooper"/>
             <xs:enumeration value="mandalorian"/>
             <xs:enumeration value="arc_trooper"/>

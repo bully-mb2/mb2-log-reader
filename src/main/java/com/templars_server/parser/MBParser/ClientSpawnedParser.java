@@ -1,16 +1,13 @@
 package com.templars_server.parser.MBParser;
 
-import com.templars_server.parser.ParsableEvent;
-import generated.ClientConnectEvent;
 import generated.ClientSpawnedEvent;
 import generated.Gender;
 import generated.Team;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 
-public class ClientSpawnedParser extends ParsableEvent<ClientSpawnedEvent> {
+public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
 
     public ClientSpawnedParser() {
         super("Player ([0-9]{1,2}) spawned with userinfo: (.*)");
@@ -107,27 +104,6 @@ public class ClientSpawnedParser extends ParsableEvent<ClientSpawnedEvent> {
         } catch (NumberFormatException e) {
             return null;
         }
-    }
-
-    private Map<String, String> parseUserinfo(String userinfoLine) {
-        Map<String, String> userinfo = new HashMap<>();
-        String[] split = userinfoLine.split("\\\\");
-        String key = null;
-
-        for (String s : split) {
-            if (s.isEmpty()) {
-                continue;
-            }
-
-            if (key == null) {
-                key = s;
-            } else {
-                userinfo.put(key, s);
-                key = null;
-            }
-        }
-
-        return userinfo;
     }
 
 }
