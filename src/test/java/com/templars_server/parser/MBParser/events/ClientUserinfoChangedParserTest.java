@@ -19,33 +19,33 @@ class ClientUserinfoChangedParserTest {
     void testParseLine_ValidLine_ExpectedSlot() {
         int testSlot = 31;
         String testName = "Padawan";
-        int testTeam = 2;
+        Team testTeam = Team.REBEL;
         String testModel = "maul_cyber/default";
         int testC1 = 2949375;
         int testC2 = 255;
         String testSC = "none";
         String testS1 = "saber_maul2";
         String testS2 = "none";
-        int testSDT = 1;
+        Team testSDT = Team.IMPERIAL;
         int testV = 0;
         int testS = 0;
-        int testMBC = 5;
+        MBClass testMBC = MBClass.SITH;
 
         String testLine = String.format(
                 "ClientUserinfoChanged: %d n\\%s\\t\\%d\\m\\%s\\c1\\%d\\c2\\%d\\sc\\%s\\s1\\%s\\s2\\%s\\sdt\\%d\\v\\%d\\s\\%d\\mbc\\%d",
                 testSlot,
                 testName,
-                testTeam,
+                testTeam.ordinal() + 1,
                 testModel,
                 testC1,
                 testC2,
                 testSC,
                 testS1,
                 testS2,
-                testSDT,
+                testSDT.ordinal() + 1,
                 testV,
                 testS,
-                testMBC
+                testMBC.ordinal()
         );
 
         ClientUserinfoChangedEvent actualEvent = clientUserinfoChangedParser.parseLine(testLine);
@@ -53,17 +53,17 @@ class ClientUserinfoChangedParserTest {
         assertThat(actualEvent).isNotNull();
         assertThat(actualEvent.getSlot()).isEqualTo(testSlot);
         assertThat(actualEvent.getName()).isEqualTo(testName);
-        assertThat(actualEvent.getTeam()).isEqualTo(Team.B);
+        assertThat(actualEvent.getTeam()).isEqualTo(testTeam);
         assertThat(actualEvent.getModel()).isEqualTo(testModel);
         assertThat(actualEvent.getColor1()).isEqualTo(testC1);
         assertThat(actualEvent.getColor2()).isEqualTo(testC2);
         assertThat(actualEvent.getSiegeclass()).isEqualTo(testSC);
         assertThat(actualEvent.getSaber1()).isEqualTo(testS1);
         assertThat(actualEvent.getSaber2()).isEqualTo(testS2);
-        assertThat(actualEvent.getDesiredTeam()).isEqualTo(Team.R);
+        assertThat(actualEvent.getDesiredTeam()).isEqualTo(testSDT);
         assertThat(actualEvent.getModelVariant()).isEqualTo(testV);
         assertThat(actualEvent.getSaberVariant()).isEqualTo(testS);
-        assertThat(actualEvent.getMbClass()).isEqualTo(MBClass.SITH);
+        assertThat(actualEvent.getMbClass()).isEqualTo(testMBC);
     }
 
     @Test

@@ -18,8 +18,10 @@ class ClientSpawnedParserTest {
     @Test
     void testParseLine_ValidLine_ExpectedSlot() {
         int testSlot = 31;
-        String testTeam = "r";
-        String testForcepowers = "1-4-220002100030000330";
+        Team testTeam = Team.REBEL;
+        ForcePowers testForcepowers = new ForcePowers();
+        testForcepowers.setMbClass(MBClass.SITH);
+        testForcepowers.setPerks("220002100030000330");
         String testIp = "521.521.612.612";
         int testPort = 8629;
         int testRate = 2500;
@@ -31,7 +33,7 @@ class ClientSpawnedParserTest {
         int testColor3 = 255;
         int testColor4 = 255;
         int testHandicap = 100;
-        String testSex = "male";
+        Gender testGender = Gender.MALE;
         int testCGPredictItems = 1;
         String testSaber1 = "single_1";
         String testSaber2 = "none";
@@ -50,8 +52,8 @@ class ClientSpawnedParserTest {
                         "\\saber1\\%s\\saber2\\%s\\char_color_red\\%d\\char_color_green\\%d\\char_color_blue\\%d\\jp\\%d" +
                         "\\pbindicator\\%d\\color3\\%d\\color4\\%d\\teamtask\\%d\\teamoverlay\\%d",
                 testSlot,
-                testTeam,
-                testForcepowers,
+                testTeam.value(),
+                "0-" + testForcepowers.getMbClass().ordinal() + "-" + testForcepowers.getPerks(),
                 testIp,
                 testPort,
                 testRate,
@@ -61,7 +63,7 @@ class ClientSpawnedParserTest {
                 testColor1,
                 testColor2,
                 testHandicap,
-                testSex,
+                testGender.value(),
                 testCGPredictItems,
                 testSaber1,
                 testSaber2,
@@ -78,14 +80,10 @@ class ClientSpawnedParserTest {
 
         ClientSpawnedEvent actualEvent = clientSpawnedParser.parseLine(testLine);
 
-        ForcePowers expectedForcePowers = new ForcePowers();
-        expectedForcePowers.setMbClass(MBClass.ARC_TROOPER);
-        expectedForcePowers.setPerks("220002100030000330");
-
         assertThat(actualEvent).isNotNull();
         assertThat(actualEvent.getSlot()).isEqualTo(testSlot);
-        assertThat(actualEvent.getTeam()).isEqualTo(Team.R);
-        assertThat(actualEvent.getForcePowers()).usingRecursiveComparison().isEqualTo(expectedForcePowers);
+        assertThat(actualEvent.getTeam()).isEqualTo(testTeam);
+        assertThat(actualEvent.getForcePowers()).usingRecursiveComparison().isEqualTo(testForcepowers);
         assertThat(actualEvent.getIp()).isEqualTo(testIp);
         assertThat(actualEvent.getPort()).isEqualTo(testPort);
         assertThat(actualEvent.getRate()).isEqualTo(testRate);
@@ -97,7 +95,7 @@ class ClientSpawnedParserTest {
         assertThat(actualEvent.getColor3()).isEqualTo(testColor3);
         assertThat(actualEvent.getColor4()).isEqualTo(testColor4);
         assertThat(actualEvent.getHandicap()).isEqualTo(testHandicap);
-        assertThat(actualEvent.getSex()).isEqualTo(Gender.M);
+        assertThat(actualEvent.getSex()).isEqualTo(testGender);
         assertThat(actualEvent.getCgPredictItems()).isEqualTo(testCGPredictItems);
         assertThat(actualEvent.getSaber1()).isEqualTo(testSaber1);
         assertThat(actualEvent.getSaber2()).isEqualTo(testSaber2);

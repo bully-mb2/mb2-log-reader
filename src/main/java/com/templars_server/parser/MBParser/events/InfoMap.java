@@ -42,11 +42,11 @@ public class InfoMap {
         } catch (IllegalArgumentException e) {
             switch (value) {
                 case "1":
-                    return Team.R;
+                    return Team.REBEL;
                 case "2":
-                    return Team.B;
+                    return Team.IMPERIAL;
                 case "3":
-                    return Team.S;
+                    return Team.SPECTATOR;
             }
 
         }
@@ -60,10 +60,10 @@ public class InfoMap {
             return Gender.fromValue(value);
         } catch (IllegalArgumentException e) {
             switch (value) {
-                case "male":
-                    return Gender.M;
-                case "female":
-                    return Gender.F;
+                case "m":
+                    return Gender.MALE;
+                case "f":
+                    return Gender.FEMALE;
             }
 
         }

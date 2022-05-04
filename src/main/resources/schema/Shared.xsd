@@ -10,16 +10,16 @@
 
     <xs:simpleType name="Team" final="restriction">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="r"/>
-            <xs:enumeration value="b"/>
-            <xs:enumeration value="s"/>
+            <xs:enumeration value="rebel"/>
+            <xs:enumeration value="imperial"/>
+            <xs:enumeration value="spectator"/>
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="Gender" final="restriction">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="m"/>
-            <xs:enumeration value="f"/>
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
         </xs:restriction>
     </xs:simpleType>
 
