@@ -3,15 +3,15 @@
 
     <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ClientConnectEvent">
-        <xs:all>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="slot" type="PlayerSlot"/>
-            <xs:element name="ip" type="xs:string"/>
-            <xs:element name="port" type="xs:int"/>
-        </xs:all>
-    </xs:complexType>
-
-    <xs:element name="ClientConnectEvent" type="ClientConnectEvent"/>
+    <xs:element name="ClientConnectEvent">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="slot" type="PlayerSlot"/>
+                <xs:element name="ip" type="xs:string"/>
+                <xs:element name="port" type="xs:int"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

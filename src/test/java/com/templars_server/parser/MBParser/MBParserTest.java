@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,17 +23,22 @@ class MBParserTest {
 
     @Test
     void testParseLine_NormalLogScenario_OutputsExpectedEvents() throws IOException {
+        StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {
-            Object object = mbParser.parseLine(line);
+            String object = mbParser.parseLine(line);
             if (object == null) {
                 continue;
             }
 
             actualEvents.add(object);
+            actualLog.write(object);
         }
 
+        String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_expected.txt");
+
         assertThat(actualEvents).hasSize(27);
+        assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
 }

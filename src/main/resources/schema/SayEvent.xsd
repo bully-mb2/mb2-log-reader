@@ -3,14 +3,14 @@
 
     <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="SayEvent">
-        <xs:all>
-            <xs:element name="slot" type="PlayerSlot"/>
-            <xs:element name="message" type="xs:string"/>
-            <xs:element name="chat_channel" type="ChatChannel"/>
-        </xs:all>
-    </xs:complexType>
-
-    <xs:element name="SayEvent" type="SayEvent"/>
+    <xs:element name="SayEvent">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="slot" type="PlayerSlot"/>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="chat_channel" type="ChatChannel"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

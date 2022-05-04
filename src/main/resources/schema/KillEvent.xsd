@@ -3,14 +3,14 @@
 
     <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="KillEvent">
-        <xs:all>
-            <xs:element name="killer" type="xs:int"/>
-            <xs:element name="victim" type="xs:int"/>
-            <xs:element name="weapon" type="Weapon"/>
-        </xs:all>
-    </xs:complexType>
-
-    <xs:element name="KillEvent" type="KillEvent"/>
+    <xs:element name="KillEvent">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="killer" type="xs:int"/>
+                <xs:element name="victim" type="xs:int"/>
+                <xs:element name="weapon" type="Weapon"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

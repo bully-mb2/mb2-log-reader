@@ -6,6 +6,6 @@ public interface Parser {
 
     void init(Properties properties);
 
-    Object parseLine(String line);
+    String parseLine(String line);
 
 }

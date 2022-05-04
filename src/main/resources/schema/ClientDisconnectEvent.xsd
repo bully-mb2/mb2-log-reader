@@ -3,12 +3,12 @@
 
     <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ClientDisconnectEvent">
-        <xs:all>
-            <xs:element name="slot" type="PlayerSlot"/>
-        </xs:all>
-    </xs:complexType>
-
-    <xs:element name="ClientDisconnectEvent" type="ClientDisconnectEvent"/>
+    <xs:element name="ClientDisconnectEvent">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="slot" type="PlayerSlot"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>

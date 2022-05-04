@@ -3,9 +3,9 @@
 
     <xs:include schemaLocation="Shared.xsd"/>
 
-    <xs:complexType name="ShutdownGameEvent">
-    </xs:complexType>
-
-    <xs:element name="ShutdownGameEvent" type="ShutdownGameEvent"/>
+    <xs:element name="ShutdownGameEvent">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
 
 </xs:schema>
