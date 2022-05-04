@@ -48,6 +48,8 @@ broadcast: print "Padawan^7 @@@PLENTER\n"
 ClientBegin: 0
 0: say: Padawan: "test"
 Padawan^7: test
+0: sayteam: Padawan: "test team"
+(Padawan): tker
 Kill: 0 0 68: Padawan killed Padawan by MOD_REAL_THERMAL
 Sending Game Report
 ShutdownGame:

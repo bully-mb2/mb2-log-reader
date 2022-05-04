@@ -43,10 +43,10 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="Chat" final="restriction">
+    <xs:simpleType name="ChatChannel" final="restriction">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="all"/>
-            <xs:enumeration value="team"/>
+            <xs:enumeration value="say"/>
+            <xs:enumeration value="sayteam"/>
         </xs:restriction>
     </xs:simpleType>
 

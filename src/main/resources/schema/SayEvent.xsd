@@ -7,7 +7,7 @@
         <xs:all>
             <xs:element name="slot" type="PlayerSlot"/>
             <xs:element name="message" type="xs:string"/>
-            <xs:element name="chat" type="Chat"/>
+            <xs:element name="chat_channel" type="ChatChannel"/>
         </xs:all>
     </xs:complexType>
 

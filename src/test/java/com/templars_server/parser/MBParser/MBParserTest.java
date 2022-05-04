@@ -32,7 +32,7 @@ class MBParserTest {
             actualEvents.add(object);
         }
 
-        assertThat(actualEvents).hasSize(26);
+        assertThat(actualEvents).hasSize(27);
     }
 
 }
