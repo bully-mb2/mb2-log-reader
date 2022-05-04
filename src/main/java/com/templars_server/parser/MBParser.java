@@ -1,7 +1,6 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser;
 
-import com.templars_server.parser.MBParser.events.*;
-import com.templars_server.parser.Parser;
+import com.templars_server.parser.events.*;
 import generated.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class MBParser implements Parser {
+public class MBParser {
 
     private static final Logger LOG = LoggerFactory.getLogger(MBParser.class);
 
@@ -26,7 +25,6 @@ public class MBParser implements Parser {
         marshaller = null;
     }
 
-    @Override
     public void init(Properties properties) {
         LOG.info("Initializing marshaller");
         try {
@@ -79,7 +77,6 @@ public class MBParser implements Parser {
         }
     }
 
-    @Override
     public String parseLine(String line) {
         try {
             StringWriter writer = new StringWriter();

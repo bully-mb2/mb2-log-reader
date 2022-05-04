@@ -1,4 +1,4 @@
-package com.templars_server.parser.MBParser.events;
+package com.templars_server.parser.events;
 
 import generated.ClientConnectEvent;
 

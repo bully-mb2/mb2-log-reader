@@ -1,4 +1,4 @@
-package com.templars_server.parser.MBParser.events;
+package com.templars_server.parser.events;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

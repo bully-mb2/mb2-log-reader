@@ -1,26 +1,26 @@
-package com.templars_server.parser.MBParser.events;
+package com.templars_server.parser.events;
 
-import generated.ClientDisconnectEvent;
+import generated.ClientBeginEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ClientDisconnectParserTest {
+class ClientBeginParserTest {
 
-    private ClientDisconnectParser clientDisconnectParser;
+    private ClientBeginParser clientBeginParser;
 
     @BeforeEach
     void beforeEach() {
-        clientDisconnectParser = new ClientDisconnectParser();
+        clientBeginParser = new ClientBeginParser();
     }
 
     @Test
     void testParseLine_ValidLine_ExpectedSlot() {
-        int testSlot = 26;
-        String testLine = "ClientDisconnect: " + testSlot;
+        int testSlot = 22;
+        String testLine = "ClientBegin: " + testSlot;
 
-        ClientDisconnectEvent actualEvent = clientDisconnectParser.parseLine(testLine);
+        ClientBeginEvent actualEvent = clientBeginParser.parseLine(testLine);
 
         assertThat(actualEvent).isNotNull();
         assertThat(actualEvent.getSlot()).isEqualTo(testSlot);
@@ -31,17 +31,17 @@ class ClientDisconnectParserTest {
         String testLine = "ClientUserinfoChanged: 2 n\\Padawan\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
                 "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
-        ClientDisconnectEvent actualEvent = clientDisconnectParser.parseLine(testLine);
+        ClientBeginEvent actualEvent = clientBeginParser.parseLine(testLine);
 
         assertThat(actualEvent).isNull();
     }
 
     @Test
     void testParseLine_InvalidLinePartiallyContainingRegex_IsNull() {
-        String testLine = "ClientUserinfoChanged: 2 n\\ClientDisconnect: 1\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
+        String testLine = "ClientUserinfoChanged: 2 n\\ClientBegin: 5\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
                 "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
-        ClientDisconnectEvent actualEvent = clientDisconnectParser.parseLine(testLine);
+        ClientBeginEvent actualEvent = clientBeginParser.parseLine(testLine);
 
         assertThat(actualEvent).isNull();
     }
