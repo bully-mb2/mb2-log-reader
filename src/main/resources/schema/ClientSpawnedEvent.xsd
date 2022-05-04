@@ -7,7 +7,7 @@
         <xs:all>
             <xs:element name="slot" type="PlayerSlot"/>
             <xs:element name="team" type="Team"/>
-            <xs:element name="force_powers" type="xs:string"/>
+            <xs:element name="force_powers" type="ForcePowers"/>
             <xs:element name="ip" type="xs:string"/>
             <xs:element name="port" type="xs:int"/>
             <xs:element name="rate" type="xs:int"/>

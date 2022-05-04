@@ -78,10 +78,14 @@ class ClientSpawnedParserTest {
 
         ClientSpawnedEvent actualEvent = clientSpawnedParser.parseLine(testLine);
 
+        ForcePowers expectedForcePowers = new ForcePowers();
+        expectedForcePowers.setMbClass(MBClass.ARC_TROOPER);
+        expectedForcePowers.setPerks("220002100030000330");
+
         assertThat(actualEvent).isNotNull();
         assertThat(actualEvent.getSlot()).isEqualTo(testSlot);
         assertThat(actualEvent.getTeam()).isEqualTo(Team.R);
-        assertThat(actualEvent.getForcePowers()).isEqualTo(testForcepowers);
+        assertThat(actualEvent.getForcePowers()).usingRecursiveComparison().isEqualTo(expectedForcePowers);
         assertThat(actualEvent.getIp()).isEqualTo(testIp);
         assertThat(actualEvent.getPort()).isEqualTo(testPort);
         assertThat(actualEvent.getRate()).isEqualTo(testRate);

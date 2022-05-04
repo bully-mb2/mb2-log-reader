@@ -21,7 +21,7 @@ public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
             clientSpawnedEvent.setIp(ipSplit[0]);
             clientSpawnedEvent.setPort(Integer.parseInt(ipSplit[1]));
             clientSpawnedEvent.setTeam(userinfo.getTeam("team"));
-            clientSpawnedEvent.setForcePowers(userinfo.getString("forcepowers"));
+            clientSpawnedEvent.setForcePowers(userinfo.getForcePowers("forcepowers"));
             clientSpawnedEvent.setRate(userinfo.getInt("rate"));
             clientSpawnedEvent.setSnaps(userinfo.getInt("snaps"));
             clientSpawnedEvent.setName(userinfo.getString("name"));

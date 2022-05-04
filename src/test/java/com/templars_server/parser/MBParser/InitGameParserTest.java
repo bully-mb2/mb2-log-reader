@@ -97,8 +97,8 @@ class InitGameParserTest {
                 testLocation,
                 testGameName,
                 testGTeamSwap,
-                testGSiegeTeam1,
                 testGSiegeTeam2,
+                testGSiegeTeam1,
                 testGSaberLocking,
                 testGPrivateDuel,
                 testGNeedPass,
@@ -131,6 +131,54 @@ class InitGameParserTest {
         InitGameEvent actualEvent = initGameParser.parseLine(testLine);
 
         assertThat(actualEvent).isNotNull();
+        assertThat(actualEvent.getVersion()).isEqualTo(testVersion);
+        assertThat(actualEvent.getTimeLimit()).isEqualTo(testTimeLimit);
+        assertThat(actualEvent.getSvPrivateClients()).isEqualTo(testSVPrivateClients);
+        assertThat(actualEvent.getSvMinRate()).isEqualTo(testSVMinRate);
+        assertThat(actualEvent.getSvMinPing()).isEqualTo(testSVMinPing);
+        assertThat(actualEvent.getSvMaxRate()).isEqualTo(testSVMaxRate);
+        assertThat(actualEvent.getSvMaxClients()).isEqualTo(testSVMaxClients);
+        assertThat(actualEvent.getSvMaxPing()).isEqualTo(testSVMaxPing);
+        assertThat(actualEvent.getSvHostname()).isEqualTo(testSVHostname);
+        assertThat(actualEvent.getSvFps()).isEqualTo(testSVFPS);
+        assertThat(actualEvent.getSvFloodProtectSlow()).isEqualTo(testSVFloodProtectSlow);
+        assertThat(actualEvent.getSvFloodProtect()).isEqualTo(testSVFloodProtect);
+        assertThat(actualEvent.getSvAutoDemo()).isEqualTo(testSVAutoDemo);
+        assertThat(actualEvent.getSvAllowDownload()).isEqualTo(testSVAllowDownload);
+        assertThat(actualEvent.getProtocol()).isEqualTo(testProtocol);
+        assertThat(actualEvent.getMapName()).isEqualTo(testMapName);
+        assertThat(actualEvent.getLocation()).isEqualTo(testLocation);
+        assertThat(actualEvent.getGameName()).isEqualTo(testGameName);
+        assertThat(actualEvent.getGTeamSwap()).isEqualTo(testGTeamSwap);
+        assertThat(actualEvent.getGSiegeTeam1()).isEqualTo(testGSiegeTeam1);
+        assertThat(actualEvent.getGSiegeTeam2()).isEqualTo(testGSiegeTeam2);
+        assertThat(actualEvent.getGSaberLocking()).isEqualTo(testGSaberLocking);
+        assertThat(actualEvent.getGPrivateDuel()).isEqualTo(testGPrivateDuel);
+        assertThat(actualEvent.getGNeedPass()).isEqualTo(testGNeedPass);
+        assertThat(actualEvent.getGMaxHolocronCarry()).isEqualTo(testGMaxHolocronCarry);
+        assertThat(actualEvent.getGMaxForceRank()).isEqualTo(testGMaxForceRank);
+        assertThat(actualEvent.getGJediVsMerc()).isEqualTo(testGJediVMerc);
+        assertThat(actualEvent.getGGravity()).isEqualTo(testGGravity);
+        assertThat(actualEvent.getGGameType()).isEqualTo(testGGameType);
+        assertThat(actualEvent.getGForceBasedTeams()).isEqualTo(testGForceBasedTeams);
+        assertThat(actualEvent.getGDuelWeaponDisable()).isEqualTo(testGDuelWeaponDisable);
+        assertThat(actualEvent.getGCompetitive()).isEqualTo(testGCompetitive);
+        assertThat(actualEvent.getGShuffleTimer()).isEqualTo(testGShuffleTimer);
+        assertThat(actualEvent.getGDuelTimeLimit()).isEqualTo(testGDuelTimeLimit);
+        assertThat(actualEvent.getGDuelFriendlyTeam()).isEqualTo(testGDuelFriendlyTeam);
+        assertThat(actualEvent.getGAuthenticity()).isEqualTo(testGAuthenticity);
+        assertThat(actualEvent.getGAntiCheat()).isEqualTo(testGAntiCheat);
+        assertThat(actualEvent.getFragLimit()).isEqualTo(testFragLimit);
+        assertThat(actualEvent.getDuelFragLimit()).isEqualTo(testDuelFragLimit);
+        assertThat(actualEvent.getDmFlags()).isEqualTo(testDMFlags);
+        assertThat(actualEvent.getDiscord()).isEqualTo(testDiscord);
+        assertThat(actualEvent.getCaptureLimit()).isEqualTo(testCaptureLimit);
+        assertThat(actualEvent.getBotMinPlayers()).isEqualTo(testBotMinPlayers);
+        assertThat(actualEvent.getBgFighterAltControl()).isEqualTo(testBGFighterAltControl);
+        assertThat(actualEvent.getTimeAdd()).isEqualTo(testTimeAdd);
+        assertThat(actualEvent.getTkSpec()).isEqualTo(testTKSpec);
+        assertThat(actualEvent.getTkKick()).isEqualTo(testTKKick);
+        assertThat(actualEvent.getRtvRtm()).isEqualTo(testRTVRTVM);
     }
 
     @Test

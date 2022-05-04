@@ -50,4 +50,11 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:complexType name="ForcePowers">
+        <xs:all>
+            <xs:element name="mb_class" type="MBClass"/>
+            <xs:element name="perks" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
 </xs:schema>
