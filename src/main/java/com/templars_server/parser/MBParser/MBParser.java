@@ -26,6 +26,7 @@ public class MBParser implements Parser {
         parserList.add(new ClientSpawnedParser());
         parserList.add(new ClientUserinfoChangedParser());
         parserList.add(new InitGameParser());
+        parserList.add(new KillParser());
         parserList.add(new ShutdownGameParser());
         LOG.info("Parsers: " + parserList);
     }

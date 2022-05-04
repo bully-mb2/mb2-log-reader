@@ -57,4 +57,11 @@
         </xs:all>
     </xs:complexType>
 
+    <xs:complexType name="Weapon">
+        <xs:all>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
 </xs:schema>
