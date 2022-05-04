@@ -1,0 +1,117 @@
+<InitGameEvent>
+    <version>JAmp: v1.0.1.0 linux-i386 Dec 31 2021</version>
+    <time_limit>0</time_limit>
+    <sv_private_clients>0</sv_private_clients>
+    <sv_min_rate>0</sv_min_rate>
+    <sv_min_ping>0</sv_min_ping>
+    <sv_max_rate>25000</sv_max_rate>
+    <sv_max_clients>32</sv_max_clients>
+    <sv_max_ping>0</sv_max_ping>
+    <sv_hostname>^7|^0+^7| ^0T^7emplar Open</sv_hostname>
+    <sv_fps>40</sv_fps>
+    <sv_flood_protect_slow>1</sv_flood_protect_slow>
+    <sv_flood_protect>1</sv_flood_protect>
+    <sv_auto_demo>0</sv_auto_demo>
+    <sv_allow_download>0</sv_allow_download>
+    <protocol>26</protocol>
+    <map_name>mb2_smuggler</map_name>
+    <game_name>Movie Battles II V1.9.1.1</game_name>
+    <g_team_swap>0</g_team_swap>
+    <g_siege_team1>LEG_Good</g_siege_team1>
+    <g_siege_team2>LEG_Evil</g_siege_team2>
+    <g_saber_locking>1</g_saber_locking>
+    <g_private_duel>1</g_private_duel>
+    <g_need_pass>0</g_need_pass>
+    <g_max_holocron_carry>3</g_max_holocron_carry>
+    <g_max_force_rank>7</g_max_force_rank>
+    <g_jedi_vs_merc>0</g_jedi_vs_merc>
+    <g_gravity>800</g_gravity>
+    <g_game_type>7</g_game_type>
+    <g_force_based_teams>0</g_force_based_teams>
+    <g_duel_weapon_disable>1</g_duel_weapon_disable>
+    <g_competitive>0</g_competitive>
+    <g_shuffle_timer>300</g_shuffle_timer>
+    <g_duel_time_limit>900</g_duel_time_limit>
+    <g_duel_friendly_team>0</g_duel_friendly_team>
+    <g_authenticity>0</g_authenticity>
+    <g_anti_cheat>1</g_anti_cheat>
+    <frag_limit>30</frag_limit>
+    <duel_frag_limit>10</duel_frag_limit>
+    <dm_flags>0</dm_flags>
+    <discord>CpyfG7btkz</discord>
+    <capture_limit>0</capture_limit>
+    <bot_min_players>0</bot_min_players>
+    <bg_fighter_alt_control>0</bg_fighter_alt_control>
+    <time_add>0</time_add>
+    <tk_spec>400</tk_spec>
+    <tk_kick>600</tk_kick>
+</InitGameEvent>
+<ClientConnectEvent>
+    <name>Padawan</name>
+    <slot>0</slot>
+    <ip>666.666.666.666</ip>
+    <port>29070</port>
+</ClientConnectEvent>
+<ClientConnectEvent>
+    <name>Padawan[1]</name>
+    <slot>1</slot>
+    <ip>777.777.777.777</ip>
+    <port>29070</port>
+</ClientConnectEvent>
+<ClientBeginEvent>
+    <slot>0</slot>
+</ClientBeginEvent>
+<ClientBeginEvent>
+    <slot>1</slot>
+</ClientBeginEvent>
+<ClientSpawnedEvent>
+    <slot>0</slot>
+    <force_powers>
+        <mb_class>bounty_hunter</mb_class>
+        <perks>030000020000031330</perks>
+    </force_powers>
+    <ip>666.666.666.666</ip>
+    <port>29070</port>
+    <rate>25000</rate>
+    <snaps>40</snaps>
+    <name>Padawan</name>
+    <model>chiss/rgb</model>
+    <color1>16738560</color1>
+    <color2>16726528</color2>
+    <color3>255</color3>
+    <color4>255</color4>
+    <handicap>100</handicap>
+    <sex>male</sex>
+    <cg_predict_items>1</cg_predict_items>
+    <saber1>single_1</saber1>
+    <saber2>none</saber2>
+    <char_color_red>66</char_color_red>
+    <char_color_green>95</char_color_green>
+    <char_color_blue>162</char_color_blue>
+    <jp>0</jp>
+    <team_task>0</team_task>
+    <pb_indicator>true</pb_indicator>
+    <team_overlay>true</team_overlay>
+</ClientSpawnedEvent>
+<ClientBeginEvent>
+    <slot>0</slot>
+</ClientBeginEvent>
+<SayEvent>
+    <slot>0</slot>
+    <message>test</message>
+    <chat_channel>say</chat_channel>
+</SayEvent>
+<SayEvent>
+    <slot>0</slot>
+    <message>test team</message>
+    <chat_channel>sayteam</chat_channel>
+</SayEvent>
+<KillEvent>
+    <killer>0</killer>
+    <victim>0</victim>
+    <weapon>
+        <id>68</id>
+        <name>MOD_REAL_THERMAL</name>
+    </weapon>
+</KillEvent>
+<ShutdownGameEvent/>

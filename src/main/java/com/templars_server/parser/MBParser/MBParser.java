@@ -50,11 +50,21 @@ public class MBParser implements Parser {
         }
 
         LOG.info("Initializing parsers");
+        boolean useClientUserInfoChanged = true;
+        if (properties.containsKey("parser.disable.clientuserinfochanged")) {
+            if (properties.getProperty("parser.disable.clientuserinfochanged").equals("true")) {
+                useClientUserInfoChanged = false;
+                LOG.info("ClientUserinfoChangedParser disabled");
+            }
+        }
+
+        parserList.clear();
         parserList.add(new ClientBeginParser());
         parserList.add(new ClientConnectParser());
         parserList.add(new ClientDisconnectParser());
         parserList.add(new ClientSpawnedParser());
-        parserList.add(new ClientUserinfoChangedParser());
+        if (useClientUserInfoChanged)
+            parserList.add(new ClientUserinfoChangedParser());
         parserList.add(new InitGameParser());
         parserList.add(new KillParser());
         parserList.add(new SayParser());
