@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ClientSpawnedEvent;
 
 import java.util.regex.Matcher;
 
-public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
+public class ClientSpawnedParser extends MBEventParser<ClientSpawnedEvent> {
 
     public ClientSpawnedParser() {
         super("^Player ([0-9]{1,2}) spawned with userinfo: (.*)$");

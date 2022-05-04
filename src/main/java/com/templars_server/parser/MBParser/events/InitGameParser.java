@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.InitGameEvent;
 
 import java.util.regex.Matcher;
 
-public class InitGameParser extends MBEvent<InitGameEvent> {
+public class InitGameParser extends MBEventParser<InitGameEvent> {
 
     public InitGameParser() {
         super("^InitGame: (.*)$");

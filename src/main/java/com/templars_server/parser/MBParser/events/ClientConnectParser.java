@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ClientConnectEvent;
 
 import java.util.regex.Matcher;
 
-public class ClientConnectParser extends MBEvent<ClientConnectEvent> {
+public class ClientConnectParser extends MBEventParser<ClientConnectEvent> {
 
     public ClientConnectParser() {
         super("^ClientConnect: \\((.*)\\) ID: ([0-9]{1,2}) \\(IP: (.*):([0-9]*)\\)$");

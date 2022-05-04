@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ClientBeginEvent;
 
 import java.util.regex.Matcher;
 
-public class ClientBeginParser extends MBEvent<ClientBeginEvent> {
+public class ClientBeginParser extends MBEventParser<ClientBeginEvent> {
 
     public ClientBeginParser() {
         super("^ClientBegin: ([0-9]{1,2})$");

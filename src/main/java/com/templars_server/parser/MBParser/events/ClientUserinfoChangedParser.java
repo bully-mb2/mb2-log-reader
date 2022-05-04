@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ClientUserinfoChangedEvent;
 
 import java.util.regex.Matcher;
 
-public class ClientUserinfoChangedParser extends MBEvent<ClientUserinfoChangedEvent> {
+public class ClientUserinfoChangedParser extends MBEventParser<ClientUserinfoChangedEvent> {
 
     public ClientUserinfoChangedParser() {
         super("^ClientUserinfoChanged: ([0-9]{1,2}) (.*)$");

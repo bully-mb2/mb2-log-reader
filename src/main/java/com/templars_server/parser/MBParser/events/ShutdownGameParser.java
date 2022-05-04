@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ShutdownGameEvent;
 
 import java.util.regex.Matcher;
 
-public class ShutdownGameParser extends MBEvent<ShutdownGameEvent> {
+public class ShutdownGameParser extends MBEventParser<ShutdownGameEvent> {
 
     public ShutdownGameParser() {
         super("^ShutdownGame:$");

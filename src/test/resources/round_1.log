@@ -1,0 +1,60 @@
+InitGame: \version\JAmp: v1.0.1.0 linux-i386 Dec 31 2021\timelimit\0\sv_privateClients\0\sv_minRate\0\sv_minPing\0\sv_maxrate\25000\sv_maxclients\32\sv_maxPing\0\sv_hostname\^7|^0+^7| ^0T^7emplar Open\sv_fps\40\sv_floodProtectSlow\1\sv_floodProtect\1\sv_autoDemo\0\sv_allowdownload\0\protocol\26\mapname\mb2_smuggler\g_saberLocking\1\g_privateDuel\1\g_needpass\0\g_maxHolocronCarry\3\g_maxForceRank\7\g_gametype\7\g_forceBasedTeams\0\g_duelWeaponDisable\1\fraglimit\30\duel_fraglimit\10\dmflags\0\capturelimit\0\discord\CpyfG7btkz\g_Authenticity\0\g_teamSwap\0\g_ShuffleTimer\300\g_DuelTimeLimit\900\g_DuelFriendlyTeam\0\g_AntiCheat\1\TK_Spec\400\TK_Kick\600\g_competitive\0\gamename\Movie Battles II V1.9.1.1\g_jediVmerc\0\g_gravity\800\TimeAdd\0\bg_fighterAltControl\0\g_siegeTeam1\LEG_Good\g_siegeTeam2\LEG_Evil
+Gametype changed, clearing session data.
+gsess mallocd
+ICARUS Instance successfully created
+Resolving master.moviebattles.org
+master.moviebattles.org resolved to 51.75.64.121:29060
+Sending heartbeat to master.moviebattles.org
+Resolving master2.moviebattles.org
+master2.moviebattles.org resolved to 74.91.114.178:29060
+Sending heartbeat to master2.moviebattles.org
+Resolving master.jkhub.org
+master.jkhub.org resolved to 135.148.31.123:29060
+Sending heartbeat to master.jkhub.org
+Resolving masterjk3.ravensoft.com
+masterjk3.ravensoft.com resolved to 12.206.251.141:29060
+Sending heartbeat to masterjk3.ravensoft.com
+Rcon from 555.555.555.555:50815: sets RTVRTM 3807/3.6c
+Rcon from 555.555.555.555:48283: svsay ^2[Status] ^7RTV is now enabled.
+ClientConnect: (Padawan) ID: 0 (IP: 666.666.666.666:29070)
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\+sit_anya_fn/default\c1\0\c2\0\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\5
+broadcast: print "Padawan^7 @@@PLCONNECT\n"
+Server restored from hibernation
+Sending heartbeat to master.moviebattles.org
+Sending heartbeat to master2.moviebattles.org
+Sending heartbeat to master.jkhub.org
+Sending heartbeat to masterjk3.ravensoft.com
+ClientConnect: (Padawan[1]) ID: 1 (IP: 777.777.777.777:29070)
+ClientUserinfoChanged: 1 n\Padawan[1]\t\3\m\kyle/default\c1\4\c2\4\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\6
+broadcast: print "Padawan[1]^7 @@@PLCONNECT\n"
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\+sit_anya_fn/default\c1\255\c2\255\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\5
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\+sit_anya_fn/default\c1\255\c2\255\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\5
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\+sit_anya_fn/default\c1\255\c2\255\sc\none\s1\single_1\s2\none\sdt\3\v\0\s\0\mbc\5
+ClientBegin: 0
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\+sit_anya_fn/default\c1\255\c2\255\sc\none\s1\single_1\s2\none\sdt\3\v\0\s\0\mbc\5
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+ClientUserinfoChanged: 1 n\Padawan[1]\t\3\m\kyle/default\c1\4\c2\4\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\6
+ClientUserinfoChanged: 1 n\Padawan[1]\t\3\m\kyle/default\c1\4\c2\4\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\6
+ClientUserinfoChanged: 1 n\Padawan[1]\t\3\m\kyle/default\c1\4\c2\4\sc\none\s1\\s2\none\sdt\3\v\0\s\0\mbc\6
+ClientUserinfoChanged: 1 n\Padawan[1]\t\3\m\kyle/default\c1\4\c2\4\sc\none\s1\single_1\s2\none\sdt\3\v\0\s\0\mbc\6
+ClientBegin: 1
+ClientUserinfoChanged: 0 n\Padawan\t\3\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+ClientUserinfoChanged: 0 n\Padawan\t\2\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+ClientUserinfoChanged: 0 n\Padawan\t\2\m\chiss/rgb\c1\16738560\c2\16726528\sc\none\s1\single_1\s2\none\sdt\2\v\0\s\0\mbc\7
+Player 0 spawned with userinfo: \team\b\forcepowers\0-7-030000020000031330\ip\666.666.666.666:29070\teamoverlay\1\snaps\40\sex\male\saber2\none\saber1\single_1\rate\25000\pbindicator\1\name\Padawan\model\chiss/rgb\jp\0\ja_guid\AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\handicap\100\color4\255\color3\255\color2\16726528\color1\16738560\char_color_red\66\char_color_green\95\char_color_blue\162\cg_predictItems\1
+broadcast: print "Padawan^7 @@@PLENTER\n"
+ClientBegin: 0
+0: say: Padawan: "test"
+Padawan^7: test
+Kill: 0 0 68: Padawan killed Padawan by MOD_REAL_THERMAL
+Sending Game Report
+ShutdownGame:
+------------------------------------------------------------
+VM_CreateLegacy: jampgamei386.so succeeded
+GAME: Initializing Unhandled Exception Filter
+------- Game Initialization -------
+gamename: Movie Battles II V1.9.1.1
+gamedate: Jan 27 2022
+------------------------------------------------------------

@@ -1,4 +1,4 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ShutdownGameEvent;
 import org.junit.jupiter.api.BeforeEach;

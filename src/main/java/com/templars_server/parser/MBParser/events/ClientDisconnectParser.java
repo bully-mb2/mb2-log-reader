@@ -1,10 +1,10 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import generated.ClientDisconnectEvent;
 
 import java.util.regex.Matcher;
 
-public class ClientDisconnectParser extends MBEvent<ClientDisconnectEvent> {
+public class ClientDisconnectParser extends MBEventParser<ClientDisconnectEvent> {
 
     public ClientDisconnectParser() {
         super("^ClientDisconnect: ([0-9]{1,2})$");

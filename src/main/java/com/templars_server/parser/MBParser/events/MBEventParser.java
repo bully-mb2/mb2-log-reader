@@ -1,17 +1,17 @@
-package com.templars_server.parser.MBParser;
+package com.templars_server.parser.MBParser.events;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class MBEvent<T> {
+public abstract class MBEventParser<T> {
 
     private final Pattern pattern;
 
-    public MBEvent(String regex) {
+    public MBEventParser(String regex) {
         this(Pattern.compile(regex));
     }
 
-    public MBEvent(Pattern pattern) {
+    public MBEventParser(Pattern pattern) {
         this.pattern = pattern;
     }
 
@@ -32,8 +32,14 @@ public abstract class MBEvent<T> {
         String[] split = userinfoLine.split("\\\\");
         String key = null;
 
+        boolean skipFirst = false;
+        if (split[0].isEmpty()) {
+            skipFirst = true;
+        }
+
         for (String s : split) {
-            if (s.isEmpty()) {
+            if (skipFirst) {
+                skipFirst = false;
                 continue;
             }
 
