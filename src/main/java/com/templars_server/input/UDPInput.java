@@ -25,7 +25,7 @@ public class UDPInput implements Input {
         externalPort = properties.getInt("input.extern.port");
 
         LOG.info("Listening on port " + receivePort);
-        LOG.info("Dropping any packets not from  " + externalAddress.getHostAddress() + ":" + externalPort);
+        LOG.info("Dropping any packets not from " + externalAddress.getHostAddress() + ":" + externalPort);
         socket = new DatagramSocket(receivePort);
         byte[] receiveData = new byte[BUFFER_SIZE];
         receivePacket = new DatagramPacket(receiveData, receiveData.length);

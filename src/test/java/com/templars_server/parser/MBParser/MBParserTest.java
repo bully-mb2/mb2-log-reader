@@ -19,7 +19,9 @@ class MBParserTest {
     @BeforeEach
     void beforeEach() {
         mbParser = new MBParser();
-        mbParser.init(new Properties());
+        Properties properties = new Properties();
+        properties.setProperty("parser.verbose", "true");
+        mbParser.init(properties);
     }
 
     @Test
@@ -45,6 +47,7 @@ class MBParserTest {
     @Test
     void testParseLine_ClientUserinfoChangedDisabled_OutputsExpectedEvents() throws IOException {
         Properties properties = new Properties();
+        properties.setProperty("parser.verbose", "true");
         properties.setProperty("parser.disable.clientuserinfochanged", "true");
         mbParser.init(properties);
         StringWriter actualLog = new StringWriter();

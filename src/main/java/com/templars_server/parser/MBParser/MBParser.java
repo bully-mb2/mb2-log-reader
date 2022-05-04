@@ -43,7 +43,11 @@ public class MBParser implements Parser {
             );
 
             marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            if (properties.containsKey("parser.verbose")) {
+                if (properties.getProperty("parser.verbose").equals("true")) {
+                    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                }
+            }
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         } catch (JAXBException e) {
             throw new RuntimeException("Failed to initialize marshaller", e);
@@ -69,7 +73,10 @@ public class MBParser implements Parser {
         parserList.add(new KillParser());
         parserList.add(new SayParser());
         parserList.add(new ShutdownGameParser());
-        LOG.info("Parsers: " + parserList);
+        LOG.info("Registered " + parserList.size() + " parsers: ");
+        for (MBEventParser<?> parser : parserList) {
+            LOG.info("   - " + parser.getClass().getSimpleName());
+        }
     }
 
     @Override

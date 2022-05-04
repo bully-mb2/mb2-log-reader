@@ -21,7 +21,7 @@ public class Application {
         LOG.info("======== Starting mb2-log-reader ========");
         LOG.info("Loading properties");
         Properties properties = new Properties();
-        properties.load(Application.class.getResourceAsStream("application.properties"));
+        properties.load(Application.class.getResourceAsStream("/application.properties"));
         LOG.info(properties.toString());
 
         String inputKey = properties.getProperty("input", "udp");
@@ -29,15 +29,18 @@ public class Application {
         Input input = InputFactory.getInput(inputKey);
         input.open(new InputProperties(properties));
 
-        String parserKey = properties.getProperty("input", "udp");
+        String parserKey = properties.getProperty("parser", "mb2");
         LOG.info("Loading parser " + parserKey);
-        Parser parser = ParserFactory.getParser(inputKey);
+        Parser parser = ParserFactory.getParser(parserKey);
         parser.init(properties);
 
+        LOG.info("Starting main loop");
         while (true) {
             String line = input.readLine();
             String xml = parser.parseLine(line);
-
+            if (xml != null) {
+                LOG.debug("\n" + xml);
+            }
         }
     }
 
