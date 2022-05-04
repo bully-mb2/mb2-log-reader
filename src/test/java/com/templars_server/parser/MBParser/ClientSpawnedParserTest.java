@@ -44,7 +44,11 @@ class ClientSpawnedParserTest {
         int testTeamOverlay = 1;
 
         String testLine = String.format(
-                "Player %s spawned with userinfo: \\team\\%s\\forcepowers\\%s\\ip\\%s:%d\\rate\\%d\\snaps\\%d\\name\\%s\\model\\%s\\color1\\%d\\color2\\%d\\handicap\\%d\\sex\\%s\\cg_predictItems\\%d\\saber1\\%s\\saber2\\%s\\char_color_red\\%d\\char_color_green\\%d\\char_color_blue\\%d\\jp\\%d\\pbindicator\\%d\\color3\\%d\\color4\\%d\\teamtask\\%d\\teamoverlay\\%d",
+                "Player %s spawned with userinfo: " +
+                        "\\team\\%s\\forcepowers\\%s\\ip\\%s:%d\\rate\\%d\\snaps\\%d\\name\\%s" +
+                        "\\model\\%s\\color1\\%d\\color2\\%d\\handicap\\%d\\sex\\%s\\cg_predictItems\\%d" +
+                        "\\saber1\\%s\\saber2\\%s\\char_color_red\\%d\\char_color_green\\%d\\char_color_blue\\%d\\jp\\%d" +
+                        "\\pbindicator\\%d\\color3\\%d\\color4\\%d\\teamtask\\%d\\teamoverlay\\%d",
                 testSlot,
                 testTeam,
                 testForcepowers,
@@ -104,7 +108,8 @@ class ClientSpawnedParserTest {
 
     @Test
     void testParseLine_InvalidLine_IsNull() {
-        String testLine = "ClientUserinfoChanged: 2 n\\Padawan\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
+        String testLine = "ClientUserinfoChanged: 2 n\\Padawan\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
+                "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
         ClientSpawnedEvent actualEvent = clientSpawnedParser.parseLine(testLine);
 
@@ -113,7 +118,8 @@ class ClientSpawnedParserTest {
 
     @Test
     void testParseLine_InvalidLinePartiallyContainingRegex_IsNull() {
-        String testLine = "ClientUserinfoChanged: 2 n\\Player 1 spawned with userinfo: a\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
+        String testLine = "ClientUserinfoChanged: 2 n\\Player 1 spawned with userinfo: a\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
+                "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
         ClientSpawnedEvent actualEvent = clientSpawnedParser.parseLine(testLine);
 

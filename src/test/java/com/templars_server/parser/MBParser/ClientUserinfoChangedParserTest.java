@@ -77,7 +77,8 @@ class ClientUserinfoChangedParserTest {
 
     @Test
     void testParseLine_InvalidLinePartiallyContainingRegex_IsNull() {
-        String testLine = "Player %s spawned with userinfo: \\team\\r\\forcepowers\\1-4-220002100030000330\\ip\\521.521.612.612:5213\\rate\\2500\\snaps\\40\\name\\ClientUserinfoChanged: 1 a";
+        String testLine = "Player %s spawned with userinfo: \\team\\r\\forcepowers\\1-4-220002100030000330\\ip\\521.521.612.612:5213" +
+                "\\rate\\2500\\snaps\\40\\name\\ClientUserinfoChanged: 1 a";
 
         ClientUserinfoChangedEvent actualEvent = clientUserinfoChangedParser.parseLine(testLine);
 

@@ -1,7 +1,5 @@
 package com.templars_server.parser.MBParser;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,8 +27,8 @@ public abstract class MBEvent<T> {
 
     protected abstract T parseEvent(Matcher matcher);
 
-    protected Map<String, String> parseUserinfo(String userinfoLine) {
-        Map<String, String> userinfo = new HashMap<>();
+    protected InfoMap parseInfoMap(String userinfoLine) {
+        InfoMap infoMap = new InfoMap();
         String[] split = userinfoLine.split("\\\\");
         String key = null;
 
@@ -42,12 +40,12 @@ public abstract class MBEvent<T> {
             if (key == null) {
                 key = s;
             } else {
-                userinfo.put(key, s);
+                infoMap.put(key, s);
                 key = null;
             }
         }
 
-        return userinfo;
+        return infoMap;
     }
 
 }

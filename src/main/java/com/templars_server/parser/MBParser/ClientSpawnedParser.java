@@ -1,10 +1,7 @@
 package com.templars_server.parser.MBParser;
 
 import generated.ClientSpawnedEvent;
-import generated.Gender;
-import generated.Team;
 
-import java.util.Map;
 import java.util.regex.Matcher;
 
 public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
@@ -19,86 +16,32 @@ public class ClientSpawnedParser extends MBEvent<ClientSpawnedEvent> {
             ClientSpawnedEvent clientSpawnedEvent = new ClientSpawnedEvent();
             clientSpawnedEvent.setSlot(Integer.parseInt(matcher.group(1)));
 
-            Map<String, String> userinfo = parseUserinfo(matcher.group(2));
-            for (Map.Entry<String, String> entry : userinfo.entrySet()) {
-                switch (entry.getKey()) {
-                    case "team":
-                        clientSpawnedEvent.setTeam(Team.fromValue(entry.getValue()));
-                        break;
-                    case "forcepowers":
-                        clientSpawnedEvent.setForcePowers(entry.getValue());
-                        break;
-                    case "ip":
-                        String[] split = entry.getValue().split(":");
-                        clientSpawnedEvent.setIp(split[0]);
-                        clientSpawnedEvent.setPort(Integer.parseInt(split[1]));
-                        break;
-                    case "rate":
-                        clientSpawnedEvent.setRate(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "snaps":
-                        clientSpawnedEvent.setSnaps(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "name":
-                        clientSpawnedEvent.setName(entry.getValue());
-                        break;
-                    case "model":
-                        clientSpawnedEvent.setModel(entry.getValue());
-                        break;
-                    case "color1":
-                        clientSpawnedEvent.setColor1(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "color2":
-                        clientSpawnedEvent.setColor2(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "color3":
-                        clientSpawnedEvent.setColor3(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "color4":
-                        clientSpawnedEvent.setColor4(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "handicap":
-                        clientSpawnedEvent.setHandicap(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "sex":
-                        if (entry.getValue().equals("male")) {
-                            clientSpawnedEvent.setSex(Gender.M);
-                        } else if (entry.getValue().equals("female")) {
-                            clientSpawnedEvent.setSex(Gender.F);
-                        }
-                        break;
-                    case "cg_predictItems":
-                        clientSpawnedEvent.setCgPredictItems(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "saber1":
-                        clientSpawnedEvent.setSaber1(entry.getValue());
-                        break;
-                    case "saber2":
-                        clientSpawnedEvent.setSaber2(entry.getValue());
-                        break;
-                    case "char_color_red":
-                        clientSpawnedEvent.setCharColorRed(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "char_color_green":
-                        clientSpawnedEvent.setCharColorGreen(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "char_color_blue":
-                        clientSpawnedEvent.setCharColorBlue(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "jp":
-                        clientSpawnedEvent.setJp(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "pbindicator":
-                        clientSpawnedEvent.setPbIndicator(Integer.parseInt(entry.getValue()) == 1);
-                        break;
-                    case "teamtask":
-                        clientSpawnedEvent.setTeamTask(Integer.parseInt(entry.getValue()));
-                        break;
-                    case "teamoverlay":
-                        clientSpawnedEvent.setTeamOverlay(Integer.parseInt(entry.getValue()) == 1);
-                        break;
-                }
-            }
+            InfoMap userinfo = parseInfoMap(matcher.group(2));
+            String[] ipSplit = userinfo.getString("ip").split(":");
+            clientSpawnedEvent.setIp(ipSplit[0]);
+            clientSpawnedEvent.setPort(Integer.parseInt(ipSplit[1]));
+            clientSpawnedEvent.setTeam(userinfo.getTeam("team"));
+            clientSpawnedEvent.setForcePowers(userinfo.getString("forcepowers"));
+            clientSpawnedEvent.setRate(userinfo.getInt("rate"));
+            clientSpawnedEvent.setSnaps(userinfo.getInt("snaps"));
+            clientSpawnedEvent.setName(userinfo.getString("name"));
+            clientSpawnedEvent.setModel(userinfo.getString("model"));
+            clientSpawnedEvent.setColor1(userinfo.getInt("color1"));
+            clientSpawnedEvent.setColor2(userinfo.getInt("color2"));
+            clientSpawnedEvent.setColor3(userinfo.getInt("color3"));
+            clientSpawnedEvent.setColor4(userinfo.getInt("color4"));
+            clientSpawnedEvent.setHandicap(userinfo.getInt("handicap"));
+            clientSpawnedEvent.setSex(userinfo.getGender("sex"));
+            clientSpawnedEvent.setCgPredictItems(userinfo.getInt("cg_predictItems"));
+            clientSpawnedEvent.setSaber1(userinfo.getString("saber1"));
+            clientSpawnedEvent.setSaber2(userinfo.getString("saber2"));
+            clientSpawnedEvent.setCharColorRed(userinfo.getInt("char_color_red"));
+            clientSpawnedEvent.setCharColorGreen(userinfo.getInt("char_color_green"));
+            clientSpawnedEvent.setCharColorBlue(userinfo.getInt("char_color_blue"));
+            clientSpawnedEvent.setJp(userinfo.getInt("jp"));
+            clientSpawnedEvent.setPbIndicator(userinfo.getBoolean("pbindicator"));
+            clientSpawnedEvent.setTeamTask(userinfo.getInt("teamtask"));
+            clientSpawnedEvent.setTeamOverlay(userinfo.getBoolean("teamoverlay"));
 
             return clientSpawnedEvent;
         } catch (NumberFormatException e) {
