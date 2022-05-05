@@ -1,8 +1,8 @@
 # MB2 Log Reader
-MB2 Log Reader is an effort by the [Movie Battles community](https://community.moviebattles.org/) to create a framework on which server plugins may be built. This is achieved by reading, parsing and formatting console log data into an easily accessable format.
+MB2 Log Reader is an effort by the [Movie Battles community](https://community.moviebattles.org/) to create a framework on which server plugins may be built. This is achieved by reading, parsing and formatting console log data into an easily accessible format.
 
 ## For server owners
-To run MB2 Log Reader we first need to setup some infrastructure. We need:
+To run MB2 Log Reader we first need to set up some infrastructure. We need:
 1. Install a [JRE](https://java.com/en/download/manual.jsp) that can run Java 11 or higher
 2. Install [bully-mb2's fork of OpenJK](https://github.com/bully-mb2/OpenJK/releases)
 3. Run an [MQTT broker](https://mosquitto.org/download/) as a service
