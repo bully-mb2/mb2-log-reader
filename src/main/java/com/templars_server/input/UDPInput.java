@@ -24,7 +24,7 @@ public class UDPInput implements Input {
         externalAddress = config.getHost("input.extern.ip");
         externalPort = config.getInt("input.extern.port");
 
-        LOG.info("Listening on port " + receivePort);
+        LOG.info("Binding to port " + receivePort);
         socket = new DatagramSocket(receivePort);
         LOG.info("Ready to receive messages from " + externalAddress.getHostAddress() + ":" + externalPort);
 
