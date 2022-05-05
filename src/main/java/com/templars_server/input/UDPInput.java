@@ -16,7 +16,6 @@ public class UDPInput implements Input {
     private int externalPort;
 
     private DatagramSocket socket;
-    private DatagramPacket receivePacket;
 
     @Override
     public void open(Config config) throws IOException {
@@ -28,13 +27,13 @@ public class UDPInput implements Input {
         LOG.info("Listening on port " + receivePort);
         LOG.info("Dropping any packets not from " + externalAddress.getHostAddress() + ":" + externalPort);
         socket = new DatagramSocket(receivePort);
-        byte[] receiveData = new byte[BUFFER_SIZE];
-        receivePacket = new DatagramPacket(receiveData, receiveData.length);
     }
 
     @Override
     public String readLine() throws IOException {
         while (true) {
+            byte[] receiveData = new byte[BUFFER_SIZE];
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             socket.receive(receivePacket);
             if (!receivePacket.getAddress().equals(externalAddress) || receivePacket.getPort() != externalPort) {
                 continue;
