@@ -65,6 +65,7 @@ public class MBParser {
         for (MBEventParser<?> parser : parserList) {
             LOG.info("   - " + parser.getClass().getSimpleName());
         }
+        LOG.info("Ready to parse messages");
     }
 
     public String parseLine(String line) {

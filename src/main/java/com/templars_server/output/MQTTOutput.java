@@ -19,7 +19,7 @@ public class MQTTOutput implements Output {
 
     @Override
     public void open(Config config) throws IOException {
-        LOG.info("Reading properties");
+        LOG.info("Reading config");
         int port = config.getInt("output.port");
         topic = config.get("output.topic");
 
@@ -39,6 +39,8 @@ public class MQTTOutput implements Output {
         } catch (MqttException e) {
             throw new IOException("Couldn't connect to MQTT Broker", e);
         }
+
+        LOG.info("Ready to send messages on topic " + topic);
     }
 
     @Override

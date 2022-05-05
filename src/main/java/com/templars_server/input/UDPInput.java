@@ -19,14 +19,15 @@ public class UDPInput implements Input {
 
     @Override
     public void open(Config config) throws IOException {
-        LOG.info("Reading properties");
+        LOG.info("Reading config");
         int receivePort = config.getInt("input.port");
         externalAddress = config.getHost("input.extern.ip");
         externalPort = config.getInt("input.extern.port");
 
         LOG.info("Listening on port " + receivePort);
-        LOG.info("Dropping any packets not from " + externalAddress.getHostAddress() + ":" + externalPort);
         socket = new DatagramSocket(receivePort);
+        LOG.info("Ready to receive messages from " + externalAddress.getHostAddress() + ":" + externalPort);
+
     }
 
     @Override

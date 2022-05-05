@@ -32,10 +32,7 @@ public abstract class MBEventParser<T> {
         String[] split = userinfoLine.split("\\\\");
         String key = null;
 
-        boolean skipFirst = false;
-        if (split[0].isEmpty()) {
-            skipFirst = true;
-        }
+        boolean skipFirst = split[0].isEmpty();
 
         for (String s : split) {
             if (skipFirst) {
