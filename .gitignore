@@ -77,3 +77,4 @@ nb-configuration.xml
 ## com.templars_server.Application
 ##############################
 logs/
+/application.properties

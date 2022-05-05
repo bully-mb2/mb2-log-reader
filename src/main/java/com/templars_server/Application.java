@@ -8,21 +8,37 @@ import com.templars_server.output.Output;
 import com.templars_server.output.OutputFactory;
 import com.templars_server.parser.MBParser;
 import com.templars_server.properties.Config;
+import com.templars_server.properties.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 public class Application {
 
+    private static final String CONFIG_FILE = "application.properties";
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) throws IOException, NoInputFoundException, NoOutputFoundException {
         LOG.info("======== Starting mb2-log-reader ========");
         LOG.info("Loading config");
         Properties properties = new Properties();
-        properties.load(Application.class.getResourceAsStream("/application.properties"));
+        File file = new File(CONFIG_FILE);
+        if (file.exists()) {
+            try (FileInputStream stream = new FileInputStream(file)) {
+                properties.load(stream);
+            }
+        } else {
+            try (FileOutputStream stream = new FileOutputStream(file)) {
+                LOG.info("No config found, creating from default");
+                properties.load(Application.class.getResourceAsStream("/" + CONFIG_FILE));
+                properties.store(stream, null);
+            }
+        }
+
         Config config = new Config(properties);
         LOG.info(properties.toString());
 
