@@ -2,7 +2,6 @@ package com.templars_server.parser;
 
 import com.templars_server.parser.events.*;
 import com.templars_server.properties.Config;
-import generated.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,18 +27,7 @@ public class MBParser {
     public void init(Config config) {
         LOG.info("Initializing marshaller");
         try {
-            JAXBContext context = JAXBContext.newInstance(
-                    ClientBeginEvent.class,
-                    ClientConnectEvent.class,
-                    ClientDisconnectEvent.class,
-                    ClientSpawnedEvent.class,
-                    ClientUserinfoChangedEvent.class,
-                    InitGameEvent.class,
-                    KillEvent.class,
-                    SayEvent.class,
-                    ShutdownGameEvent.class
-            );
-
+            JAXBContext context = JAXBContext.newInstance("generated");
             marshaller = context.createMarshaller();
             if (config.getBoolean("parser.verbose")) {
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
