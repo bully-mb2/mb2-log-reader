@@ -2,9 +2,9 @@ package com.templars_server;
 
 import com.templars_server.input.Input;
 import com.templars_server.input.InputFactory;
-import com.templars_server.input.InputProperties;
 import com.templars_server.input.NoInputFoundException;
 import com.templars_server.parser.MBParser;
+import com.templars_server.properties.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,19 +17,20 @@ public class Application {
 
     public static void main(String[] args) throws IOException, NoInputFoundException {
         LOG.info("======== Starting mb2-log-reader ========");
-        LOG.info("Loading properties");
+        LOG.info("Loading config");
         Properties properties = new Properties();
         properties.load(Application.class.getResourceAsStream("/application.properties"));
+        Config config = new Config(properties);
         LOG.info(properties.toString());
 
-        String inputKey = properties.getProperty("input", "udp");
-        LOG.info("Loading input " + inputKey);
-        Input input = InputFactory.getInput(inputKey);
-        input.open(new InputProperties(properties));
+        String inputType = config.get("input");
+        LOG.info("Loading input " + inputType);
+        Input input = InputFactory.getInput(inputType);
+        input.open(config);
 
         LOG.info("Loading parser");
         MBParser parser = new MBParser();
-        parser.init(properties);
+        parser.init(config);
 
         LOG.info("Starting main loop");
         while (true) {

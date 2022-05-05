@@ -1,5 +1,6 @@
 package com.templars_server.parser;
 
+import com.templars_server.properties.Config;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +22,8 @@ class MBParserTest {
         mbParser = new MBParser();
         Properties properties = new Properties();
         properties.setProperty("parser.verbose", "true");
-        mbParser.init(properties);
+        properties.setProperty("parser.disable.clientuserinfochanged", "false");
+        mbParser.init(new Config(properties));
     }
 
     @Test
@@ -49,7 +51,7 @@ class MBParserTest {
         Properties properties = new Properties();
         properties.setProperty("parser.verbose", "true");
         properties.setProperty("parser.disable.clientuserinfochanged", "true");
-        mbParser.init(properties);
+        mbParser.init(new Config(properties));
         StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {

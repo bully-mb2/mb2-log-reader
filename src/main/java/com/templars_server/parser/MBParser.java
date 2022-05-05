@@ -1,6 +1,7 @@
 package com.templars_server.parser;
 
 import com.templars_server.parser.events.*;
+import com.templars_server.properties.Config;
 import generated.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,6 @@ import javax.xml.bind.Marshaller;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class MBParser {
 
@@ -25,7 +25,7 @@ public class MBParser {
         marshaller = null;
     }
 
-    public void init(Properties properties) {
+    public void init(Config config) {
         LOG.info("Initializing marshaller");
         try {
             JAXBContext context = JAXBContext.newInstance(
@@ -41,10 +41,8 @@ public class MBParser {
             );
 
             marshaller = context.createMarshaller();
-            if (properties.containsKey("parser.verbose")) {
-                if (properties.getProperty("parser.verbose").equals("true")) {
-                    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-                }
+            if (config.getBoolean("parser.verbose")) {
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             }
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         } catch (JAXBException e) {
@@ -52,20 +50,12 @@ public class MBParser {
         }
 
         LOG.info("Initializing parsers");
-        boolean useClientUserInfoChanged = true;
-        if (properties.containsKey("parser.disable.clientuserinfochanged")) {
-            if (properties.getProperty("parser.disable.clientuserinfochanged").equals("true")) {
-                useClientUserInfoChanged = false;
-                LOG.info("ClientUserinfoChangedParser disabled");
-            }
-        }
-
         parserList.clear();
         parserList.add(new ClientBeginParser());
         parserList.add(new ClientConnectParser());
         parserList.add(new ClientDisconnectParser());
         parserList.add(new ClientSpawnedParser());
-        if (useClientUserInfoChanged)
+        if (!config.getBoolean("parser.disable.clientuserinfochanged"))
             parserList.add(new ClientUserinfoChangedParser());
         parserList.add(new InitGameParser());
         parserList.add(new KillParser());

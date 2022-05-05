@@ -1,5 +1,6 @@
 package com.templars_server.input;
 
+import com.templars_server.properties.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,11 +19,11 @@ public class UDPInput implements Input {
     private DatagramPacket receivePacket;
 
     @Override
-    public void open(InputProperties properties) throws IOException {
+    public void open(Config config) throws IOException {
         LOG.info("Reading properties");
-        int receivePort = properties.getInt("input.port");
-        externalAddress = properties.getHost("input.extern.ip");
-        externalPort = properties.getInt("input.extern.port");
+        int receivePort = config.getInt("input.port");
+        externalAddress = config.getHost("input.extern.ip");
+        externalPort = config.getInt("input.extern.port");
 
         LOG.info("Listening on port " + receivePort);
         LOG.info("Dropping any packets not from " + externalAddress.getHostAddress() + ":" + externalPort);
