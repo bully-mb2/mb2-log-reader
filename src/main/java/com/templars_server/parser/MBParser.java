@@ -48,6 +48,7 @@ public class MBParser {
         parserList.add(new InitGameParser());
         parserList.add(new KillParser());
         parserList.add(new SayParser());
+        parserList.add(new SendingGameReportParser());
         parserList.add(new ShutdownGameParser());
         LOG.info("Registered " + parserList.size() + " parsers: ");
         for (MBEventParser<?> parser : parserList) {
