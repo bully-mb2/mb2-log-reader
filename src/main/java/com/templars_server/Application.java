@@ -7,14 +7,10 @@ import com.templars_server.output.NoOutputFoundException;
 import com.templars_server.output.Output;
 import com.templars_server.output.OutputFactory;
 import com.templars_server.parser.MBParser;
-import com.templars_server.properties.Config;
-import com.templars_server.properties.Properties;
+import com.templars_server.util.settings.Settings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Application {
@@ -24,37 +20,23 @@ public class Application {
 
     public static void main(String[] args) throws IOException, NoInputFoundException, NoOutputFoundException {
         LOG.info("======== Starting mb2-log-reader ========");
-        LOG.info("Loading config");
-        Properties properties = new Properties();
-        File file = new File(CONFIG_FILE);
-        if (file.exists()) {
-            try (FileInputStream stream = new FileInputStream(file)) {
-                properties.load(stream);
-            }
-        } else {
-            try (FileOutputStream stream = new FileOutputStream(file)) {
-                LOG.info("No config found, creating from default");
-                properties.load(Application.class.getResourceAsStream("/" + CONFIG_FILE));
-                properties.store(stream, null);
-            }
-        }
+        LOG.info("Loading settings");
+        Settings settings = new Settings();
+        settings.load("application.properties");
 
-        Config config = new Config(properties);
-        LOG.info(properties.toString());
-
-        String inputType = config.get("input");
+        String inputType = settings.get("input");
         LOG.info("Loading input " + inputType);
         Input input = InputFactory.getInput(inputType);
-        input.open(config);
+        input.open(settings);
 
         LOG.info("Loading parser");
         MBParser parser = new MBParser();
-        parser.init(config);
+        parser.init(settings);
 
-        String outputType = config.get("output");
+        String outputType = settings.get("output");
         LOG.info("Loading output " + outputType);
         Output output = OutputFactory.getOutput(outputType);
-        output.open(config);
+        output.open(settings);
 
         LOG.info("Starting main loop");
         while (!Thread.interrupted()) {

@@ -1,6 +1,6 @@
 package com.templars_server.parser;
 
-import com.templars_server.properties.Config;
+import com.templars_server.util.settings.Settings;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import static com.templars_server.util.TestUtils.loadResourceAsString;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,10 +19,10 @@ class MBParserTest {
     @BeforeEach
     void beforeEach() {
         mbParser = new MBParser();
-        Properties properties = new Properties();
-        properties.setProperty("parser.verbose", "true");
-        properties.setProperty("parser.disable.clientuserinfochanged", "false");
-        mbParser.init(new Config(properties));
+        Settings settings = new Settings();
+        settings.set("parser.verbose", "true");
+        settings.set("parser.disable.clientuserinfochanged", "false");
+        mbParser.init(settings);
     }
 
     @Test
@@ -48,10 +47,10 @@ class MBParserTest {
 
     @Test
     void testParseLine_ClientUserinfoChangedDisabled_OutputsExpectedEvents() throws IOException {
-        Properties properties = new Properties();
-        properties.setProperty("parser.verbose", "true");
-        properties.setProperty("parser.disable.clientuserinfochanged", "true");
-        mbParser.init(new Config(properties));
+        Settings settings = new Settings();
+        settings.set("parser.verbose", "true");
+        settings.set("parser.disable.clientuserinfochanged", "true");
+        mbParser.init(settings);
         StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {

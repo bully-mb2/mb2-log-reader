@@ -1,6 +1,6 @@
 package com.templars_server.output;
 
-import com.templars_server.properties.Config;
+import com.templars_server.util.settings.Settings;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.slf4j.Logger;
@@ -18,10 +18,10 @@ public class MQTTOutput implements Output {
     private String topic;
 
     @Override
-    public void open(Config config) throws IOException {
+    public void open(Settings settings) throws IOException {
         LOG.info("Reading config");
-        int port = config.getInt("output.port");
-        topic = config.get("output.topic");
+        int port = settings.getInt("output.port");
+        topic = settings.get("output.topic");
 
         LOG.info("Looking for MQTT broker on port " + port);
         MqttConnectOptions options = new MqttConnectOptions();

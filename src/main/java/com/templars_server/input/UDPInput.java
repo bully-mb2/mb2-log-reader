@@ -1,32 +1,32 @@
 package com.templars_server.input;
 
-import com.templars_server.properties.Config;
+import com.templars_server.util.settings.Settings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetSocketAddress;
 
 public class UDPInput implements Input {
 
     private static final Logger LOG = LoggerFactory.getLogger(UDPInput.class);
     private static final int BUFFER_SIZE = 1024;
 
-    private InetAddress externalAddress;
-    private int externalPort;
+    private InetSocketAddress externalAddress;
 
     private DatagramSocket socket;
 
     @Override
-    public void open(Config config) throws IOException {
+    public void open(Settings settings) throws IOException {
         LOG.info("Reading config");
-        int receivePort = config.getInt("input.port");
-        externalAddress = config.getHost("input.extern.ip");
-        externalPort = config.getInt("input.extern.port");
+        int receivePort = settings.getInt("input.port");
+        externalAddress = settings.getAddress("input.extern.host");
 
         LOG.info("Binding to port " + receivePort);
         socket = new DatagramSocket(receivePort);
-        LOG.info("Ready to receive messages from " + externalAddress.getHostAddress() + ":" + externalPort);
+        LOG.info("Ready to receive messages from " + externalAddress.getHostName() + ":" + externalAddress.getPort());
 
     }
 
@@ -36,7 +36,7 @@ public class UDPInput implements Input {
             byte[] receiveData = new byte[BUFFER_SIZE];
             DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             socket.receive(receivePacket);
-            if (!receivePacket.getAddress().equals(externalAddress) || receivePacket.getPort() != externalPort) {
+            if (!receivePacket.getAddress().equals(externalAddress.getAddress()) || receivePacket.getPort() != externalAddress.getPort()) {
                 continue;
             }
 

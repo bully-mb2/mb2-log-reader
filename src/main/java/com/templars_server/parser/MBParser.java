@@ -1,7 +1,7 @@
 package com.templars_server.parser;
 
 import com.templars_server.parser.events.*;
-import com.templars_server.properties.Config;
+import com.templars_server.util.settings.Settings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,12 +24,12 @@ public class MBParser {
         marshaller = null;
     }
 
-    public void init(Config config) {
+    public void init(Settings settings) {
         LOG.info("Initializing marshaller");
         try {
             JAXBContext context = JAXBContext.newInstance("generated");
             marshaller = context.createMarshaller();
-            if (config.getBoolean("parser.verbose")) {
+            if (settings.getBoolean("parser.verbose")) {
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             }
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
@@ -43,7 +43,7 @@ public class MBParser {
         parserList.add(new ClientConnectParser());
         parserList.add(new ClientDisconnectParser());
         parserList.add(new ClientSpawnedParser());
-        if (!config.getBoolean("parser.disable.clientuserinfochanged"))
+        if (!settings.getBoolean("parser.disable.clientuserinfochanged"))
             parserList.add(new ClientUserinfoChangedParser());
         parserList.add(new InitGameParser());
         parserList.add(new KillParser());
