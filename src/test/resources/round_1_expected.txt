@@ -354,4 +354,5 @@
         <name>MOD_REAL_THERMAL</name>
     </weapon>
 </KillEvent>
+<SendingGameReportEvent/>
 <ShutdownGameEvent/>
