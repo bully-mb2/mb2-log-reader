@@ -23,7 +23,7 @@ public class MQTTOutput implements Output {
         int port = config.getInt("output.port");
         topic = config.get("output.topic");
 
-        LOG.info("Looking for MQTT Broker on port " + port);
+        LOG.info("Looking for MQTT broker on port " + port);
         MqttConnectOptions options = new MqttConnectOptions();
         options.setAutomaticReconnect(true);
         options.setCleanSession(true);
@@ -37,7 +37,7 @@ public class MQTTOutput implements Output {
             );
             publisher.connect(options);
         } catch (MqttException e) {
-            throw new IOException("Couldn't connect to MQTT Broker", e);
+            throw new IOException("Couldn't connect to MQTT broker", e);
         }
 
         LOG.info("Ready to send messages on topic " + topic);
@@ -48,7 +48,7 @@ public class MQTTOutput implements Output {
         try {
             publisher.publish(topic, makeMessage(message));
         } catch (MqttException e) {
-            throw new IOException("Couldn't publish message to MQTT Broker", e);
+            throw new IOException("Couldn't publish message to MQTT broker", e);
         }
     }
 
