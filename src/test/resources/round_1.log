@@ -1,3 +1,105 @@
+------------------------------------------------------------
+------ Server Initialization ------
+Server: mb2_smuggler
+----- FS_Startup -----
+Current search path:
+C:\MBII\z_MB_BaseAssets.pk3 (24 files)
+C:\MBII\zz_zzzz_modifcation.pk3 (2 files)
+C:\MBII\zz_MBModels4.pk3 (1626 files)
+C:\MBII\zz_MBModels3.pk3 (541 files)
+C:\MBII\zz_MBModels2.pk3 (1403 files)
+C:\MBII\zz_MBModels.pk3 (9779 files)
+C:\MBII\MB_Effects.pk3 (819 files)
+C:\MBII\MBVideos.pk3 (53 files)
+C:\MBII\MBII_Mac.pk3 (3 files)
+C:\MBII\MBII.pk3 (5 files)
+C:\MBII\MBHilts.pk3 (1331 files)
+C:\MBII\MBAssets4.pk3 (5 files)
+C:\MBII\MBAssets3.pk3 (3786 files)
+C:\MBII\MBAssets2.pk3 (2237 files)
+C:\MBII\MBAssets.pk3 (876 files)
+C:\MBII\MB2_yavinassault.pk3 (157 files)
+C:\MBII\mb2_um_assets4.pk3 (996 files)
+C:\MBII\mb2_um_assets3.pk3 (1669 files)
+C:\MBII\mb2_um_assets2.pk3 (3846 files)
+C:\MBII\mb2_um_assets.pk3 (1599 files)
+C:\MBII\mb2_tutorial.pk3 (458 files)
+C:\MBII\mb2_tradefed.pk3 (346 files)
+C:\MBII\mb2_theed.pk3 (104 files)
+C:\MBII\mb2_tatooine.pk3 (368 files)
+C:\MBII\mb2_taris.pk3 (124 files)
+C:\MBII\mb2_tantiveIV.pk3 (195 files)
+C:\MBII\mb2_starkiller_base.pk3 (292 files)
+C:\MBII\mb2_smuggler.pk3 (149 files)
+C:\MBII\mb2_SDestroyer.pk3 (262 files)
+C:\MBII\mb2_scarif.pk3 (694 files)
+C:\MBII\mb2_republiccruiser.pk3 (870 files)
+C:\MBII\mb2_rc_hangarC.pk3 (321 files)
+C:\MBII\mb2_pb_assets2.pk3 (497 files)
+C:\MBII\mb2_pb_assets.pk3 (3688 files)
+C:\MBII\mb2_mygeeto.pk3 (114 files)
+C:\MBII\mb2_mustafar.pk3 (155 files)
+C:\MBII\mb2_moseisley.pk3 (1 files)
+C:\MBII\mb2_lunarbase.pk3 (128 files)
+C:\MBII\mb2_korriban.pk3 (199 files)
+C:\MBII\mb2_kamino.pk3 (616 files)
+C:\MBII\mb2_jeditemple.pk3 (654 files)
+C:\MBII\mb2_jakku.pk3 (170 files)
+C:\MBII\mb2_jabba.pk3 (98 files)
+C:\MBII\mb2_eravana.pk3 (135 files)
+C:\MBII\mb2_enclave.pk3 (280 files)
+C:\MBII\mb2_echobase.pk3 (117 files)
+C:\MBII\mb2_dxun.pk3 (152 files)
+C:\MBII\mb2_duel_yavin4.pk3 (1 files)
+C:\MBII\mb2_duel_votj.pk3 (82 files)
+C:\MBII\mb2_duel_utapau.pk3 (120 files)
+C:\MBII\mb2_duel_starkiller_base.pk3 (1 files)
+C:\MBII\mb2_duel_starforge.pk3 (105 files)
+C:\MBII\mb2_duel_senate.pk3 (1 files)
+C:\MBII\mb2_duel_sabh.pk3 (62 files)
+C:\MBII\mb2_duel_revan.pk3 (170 files)
+C:\MBII\mb2_duel_ravager.pk3 (79 files)
+C:\MBII\mb2_duel_office.pk3 (1 files)
+C:\MBII\mb2_duel_malachor.pk3 (117 files)
+C:\MBII\mb2_duel_geonosis.pk3 (1 files)
+C:\MBII\mb2_duel_emperor.pk3 (1 files)
+C:\MBII\mb2_dotf.pk3 (885 files)
+C:\MBII\mb2_deathstar.pk3 (580 files)
+C:\MBII\mb2_crait.pk3 (157 files)
+C:\MBII\mb2_Coruscant_chase.pk3 (485 files)
+C:\MBII\mb2_corellia.pk3 (268 files)
+C:\MBII\MB2_Commtower.pk3 (235 files)
+C:\MBII\mb2_cmp_assets3.pk3 (1242 files)
+C:\MBII\mb2_cmp_assets2.pk3 (2257 files)
+C:\MBII\mb2_cmp_assets.pk3 (2272 files)
+C:\MBII\mb2_cloudcity.pk3 (512 files)
+C:\MBII\mb2_boc.pk3 (596 files)
+C:\MBII\mb2_alderaan.pk3 (173 files)
+C:\MBII\03_MovieGameMappack.pk3 (2001 files)
+C:\MBII\031_MovieGameMappack.pk3 (3 files)
+C:\MBII\02_MovieGameMappack.pk3 (8450 files)
+C:\MBII\01_MovieGameMappack.pk3 (3321 files)
+C:\MBII
+C:\base\mapextras.pk3 (55 files)
+C:\base\assets3.pk3 (16 files)
+C:\base\assets2.pk3 (62 files)
+C:\base\assets1.pk3 (8320 files)
+C:\base\assets0.pk3 (15346 files)
+C:\base\0-assets2.pk3 (289 files)
+C:\base\0-assets1.pk3 (8011 files)
+C:\base\0-assets0.pk3 (6674 files)
+C:\base
+
+handle 1: qconsole.log
+----------------------
+109784 files in pk3 files
+VM_Create: jampgamex86.dll failed!
+VM_CreateLegacy: jampgamex86.dll succeeded
+GAME: Initializing Unhandled Exception Filter
+------- Game Initialization -------
+gamename: Movie Battles II V1.9.1.1
+gamedate: Jan 27 2022
+------------------------------------------------------------
 InitGame: \version\JAmp: v1.0.1.0 linux-i386 Dec 31 2021\timelimit\0\sv_privateClients\0\sv_minRate\0\sv_minPing\0\sv_maxrate\25000\sv_maxclients\32\sv_maxPing\0\sv_hostname\^7|^0+^7| ^0T^7emplar Open\sv_fps\40\sv_floodProtectSlow\1\sv_floodProtect\1\sv_autoDemo\0\sv_allowdownload\0\protocol\26\mapname\mb2_smuggler\g_saberLocking\1\g_privateDuel\1\g_needpass\0\g_maxHolocronCarry\3\g_maxForceRank\7\g_gametype\7\g_forceBasedTeams\0\g_duelWeaponDisable\1\fraglimit\30\duel_fraglimit\10\dmflags\0\capturelimit\0\discord\CpyfG7btkz\g_Authenticity\0\g_teamSwap\0\g_ShuffleTimer\300\g_DuelTimeLimit\900\g_DuelFriendlyTeam\0\g_AntiCheat\1\TK_Spec\400\TK_Kick\600\g_competitive\0\gamename\Movie Battles II V1.9.1.1\g_jediVmerc\0\g_gravity\800\TimeAdd\0\bg_fighterAltControl\0\g_siegeTeam1\LEG_Good\g_siegeTeam2\LEG_Evil
 Gametype changed, clearing session data.
 gsess mallocd
