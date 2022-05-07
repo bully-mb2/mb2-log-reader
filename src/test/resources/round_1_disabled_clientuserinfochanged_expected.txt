@@ -1,3 +1,4 @@
+<ServerInitializationEvent/>
 <InitGameEvent>
     <version>JAmp: v1.0.1.0 linux-i386 Dec 31 2021</version>
     <time_limit>0</time_limit>

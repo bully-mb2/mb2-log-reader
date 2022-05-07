@@ -1,6 +1,6 @@
 <xs:schema version="1.2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="SendingGameReportEvent">
+    <xs:element name="ServerInitializationEvent">
         <xs:complexType>
         </xs:complexType>
     </xs:element>
