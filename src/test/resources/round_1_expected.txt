@@ -48,8 +48,8 @@
     <tk_kick>600</tk_kick>
 </InitGameEvent>
 <ClientConnectEvent>
-    <name>Padawan</name>
     <slot>0</slot>
+    <name>Padawan</name>
     <ip>666.666.666.666</ip>
     <port>29070</port>
 </ClientConnectEvent>
@@ -69,8 +69,8 @@
     <mb_class>sith</mb_class>
 </ClientUserinfoChangedEvent>
 <ClientConnectEvent>
-    <name>Padawan[1]</name>
     <slot>1</slot>
+    <name>Padawan[1]</name>
     <ip>777.777.777.777</ip>
     <port>29070</port>
 </ClientConnectEvent>
@@ -339,11 +339,13 @@
 </ClientBeginEvent>
 <SayEvent>
     <slot>0</slot>
+    <name>Padawan</name>
     <message>test</message>
     <chat_channel>say</chat_channel>
 </SayEvent>
 <SayEvent>
     <slot>0</slot>
+    <name>Padawan</name>
     <message>test team</message>
     <chat_channel>sayteam</chat_channel>
 </SayEvent>

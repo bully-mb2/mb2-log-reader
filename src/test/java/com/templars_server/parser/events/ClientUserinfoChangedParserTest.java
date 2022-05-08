@@ -16,6 +16,7 @@ class ClientUserinfoChangedParserTest {
     }
 
     @Test
+    @SuppressWarnings("ConstantConditions")
     void testParseLine_ValidLine_ExpectedSlot() {
         int testSlot = 31;
         String testName = "Padawan";

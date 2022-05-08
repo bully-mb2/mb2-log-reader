@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 public class SayParser extends MBEventParser<SayEvent> {
 
     public SayParser() {
-        super("^([0-9]{1,2}): (say|sayteam): .*: \"(.*)\"$");
+        super("^([0-9]{1,2}): (say|sayteam): (.*?)\u0019?: \"(.*)\"$");
     }
 
     @Override
@@ -18,7 +18,8 @@ public class SayParser extends MBEventParser<SayEvent> {
 
             sayEvent.setSlot(Integer.parseInt(matcher.group(1)));
             sayEvent.setChatChannel(ChatChannel.fromValue(matcher.group(2)));
-            sayEvent.setMessage(matcher.group(3));
+            sayEvent.setName(matcher.group(3));
+            sayEvent.setMessage(matcher.group(4));
 
             return sayEvent;
         } catch (NumberFormatException e) {

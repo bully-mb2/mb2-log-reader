@@ -20,14 +20,16 @@ class SayParserTest {
     void testParseLine_ValidLine_ExpectedSlot() {
         int testSlot = 31;
         ChatChannel testChatChannel = ChatChannel.SAY;
+        String testName = "Padawan";
         String testMessage = "test";
-        String testLine = String.format("%d: %s: Padawan: \"%s\"", testSlot, testChatChannel.value(), testMessage);
+        String testLine = String.format("%d: %s: %s: \"%s\"", testSlot, testChatChannel.value(), testName, testMessage);
 
         SayEvent actualEvent = sayParser.parseLine(testLine);
 
         assertThat(actualEvent).isNotNull();
         assertThat(actualEvent.getSlot()).isEqualTo(testSlot);
         assertThat(actualEvent.getChatChannel()).isEqualTo(testChatChannel);
+        assertThat(actualEvent.getName()).isEqualTo(testName);
         assertThat(actualEvent.getMessage()).isEqualTo(testMessage);
     }
 
