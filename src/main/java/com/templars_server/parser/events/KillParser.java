@@ -15,7 +15,6 @@ public class KillParser extends MBEventParser<KillEvent> {
     protected KillEvent parseEvent(Matcher matcher) {
         try {
             KillEvent killEvent = new KillEvent();
-
             killEvent.setKiller(Integer.parseInt(matcher.group(1)));
             killEvent.setVictim(Integer.parseInt(matcher.group(2)));
 
