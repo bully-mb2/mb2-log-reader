@@ -69,7 +69,7 @@ public class MBParser {
                 }
             }
         } catch (JAXBException e) {
-            e.printStackTrace();
+            LOG.error("Couldn't marshal line, is your schema up to date?", e);
         }
 
         return null;

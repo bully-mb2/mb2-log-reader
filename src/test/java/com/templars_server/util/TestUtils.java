@@ -1,12 +1,11 @@
 package com.templars_server.util;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
 public class TestUtils {
 
-    public static String loadResourceAsString(Class<?> cl, String fileName) throws IOException {
+    public static String loadResourceAsString(Class<?> cl, String fileName) {
         InputStream stream = cl.getClassLoader().getResourceAsStream(fileName);
         if (stream == null) {
             return "";

@@ -22,7 +22,7 @@ public class Application {
         LOG.info("======== Starting mb2-log-reader ========");
         LOG.info("Loading settings");
         Settings settings = new Settings();
-        settings.load("application.properties");
+        settings.load(CONFIG_FILE);
 
         String inputType = settings.get("input");
         LOG.info("Loading input " + inputType);
