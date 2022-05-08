@@ -1,5 +1,5 @@
 # MB2 Log Reader
-<img align="right" width="115" height="115" src="https://user-images.githubusercontent.com/86576295/167314810-c9b6a021-6a41-463f-b35f-6ac3b825be7a.png">
+<img align="right" width="115" height="115" src="https://user-images.githubusercontent.com/86576295/167314810-c9b6a021-6a41-463f-b35f-6ac3b825be7a.png"></img>
 MB2 Log Reader is an effort by the [Movie Battles community](https://community.moviebattles.org/) to create a framework on which server plugins may be built. This is achieved by reading, parsing and formatting console log data into an easily accessible format.
 
 ## For server owners
