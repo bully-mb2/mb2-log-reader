@@ -68,6 +68,15 @@ class ClientUserinfoChangedParserTest {
     }
 
     @Test
+    void testParseLine_LineNoUserInfo_NoExceptions() {
+        String testLine = "ClientUserinfoChanged: 0 ";
+
+        ClientUserinfoChangedEvent actualEvent = clientUserinfoChangedParser.parseLine(testLine);
+
+        assertThat(actualEvent).isNotNull();
+    }
+
+    @Test
     void testParseLine_InvalidLine_IsNull() {
         String testLine = "ClientBegin: 5";
 
