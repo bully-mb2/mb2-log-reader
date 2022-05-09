@@ -40,6 +40,10 @@ public class InfoMap {
         try {
             return Team.fromValue(value);
         } catch (IllegalArgumentException e) {
+            if (value == null) {
+                return null;
+            }
+
             switch (value) {
                 case "1":
                     return Team.REBEL;
@@ -48,7 +52,6 @@ public class InfoMap {
                 case "3":
                     return Team.SPECTATOR;
             }
-
         }
 
         return null;
@@ -59,6 +62,10 @@ public class InfoMap {
         try {
             return Gender.fromValue(value);
         } catch (IllegalArgumentException e) {
+            if (value == null) {
+                return null;
+            }
+
             switch (value) {
                 case "m":
                     return Gender.MALE;
@@ -100,6 +107,10 @@ public class InfoMap {
     }
 
     private MBClass mbClassFromString(String value) {
+        if (value == null) {
+            return null;
+        }
+
         switch (value) {
             case "0":
                 return MBClass.NONE;
