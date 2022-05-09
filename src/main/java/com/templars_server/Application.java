@@ -39,13 +39,18 @@ public class Application {
         output.open(settings);
 
         LOG.info("Starting main loop");
+        String line = "";
         while (!Thread.interrupted()) {
-            String line = input.readLine();
-            LOG.debug(line);
-            String xml = parser.parseLine(line);
-            if (xml != null) {
-                LOG.debug("\n" + xml);
-                output.writeMessage(xml);
+            try {
+                line = input.readLine();
+                LOG.debug(line);
+                String xml = parser.parseLine(line);
+                if (xml != null) {
+                    LOG.debug("\n" + xml);
+                    output.writeMessage(xml);
+                }
+            } catch (Exception e) {
+                LOG.error("Uncaught exception while parsing. Last known line: " + line, e);
             }
         }
     }
