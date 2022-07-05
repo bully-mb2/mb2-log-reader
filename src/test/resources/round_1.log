@@ -153,6 +153,8 @@ Padawan^7: test
 0: sayteam: Padawan: "test team"
 (Padawan): tker
 Kill: 0 0 68: Padawan killed Padawan by MOD_REAL_THERMAL
+say: Admin: !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change
+^1Admin: !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change
 Sending Game Report
 ShutdownGame:
 ------------------------------------------------------------
