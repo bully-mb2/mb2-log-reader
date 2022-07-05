@@ -40,7 +40,7 @@ class MBParserTest {
 
         String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_expected.txt");
 
-        assertThat(actualEvents).hasSize(29);
+        assertThat(actualEvents).hasSize(30);
         assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
@@ -64,7 +64,7 @@ class MBParserTest {
 
         String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_disabled_clientuserinfochanged_expected.txt");
 
-        assertThat(actualEvents).hasSize(13);
+        assertThat(actualEvents).hasSize(14);
         assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
