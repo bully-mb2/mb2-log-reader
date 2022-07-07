@@ -52,6 +52,7 @@ public class MBParser {
         parserList.add(new SendingGameReportParser());
         parserList.add(new ServerInitializationParser());
         parserList.add(new ShutdownGameParser());
+        parserList.add(new FragLimitHitParser());
         LOG.info("Registered " + parserList.size() + " parsers: ");
         for (MBEventParser<?> parser : parserList) {
             LOG.info("   - " + parser.getClass().getSimpleName());

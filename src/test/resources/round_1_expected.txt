@@ -330,6 +330,7 @@
     <char_color_green>95</char_color_green>
     <char_color_blue>162</char_color_blue>
     <jp>0</jp>
+    <ja_guid>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</ja_guid>
     <team_task>0</team_task>
     <pb_indicator>true</pb_indicator>
     <team_overlay>true</team_overlay>
@@ -361,4 +362,5 @@
     <message>!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change</message>
 </AdminSayEvent>
 <SendingGameReportEvent/>
+<FragLimitReachedEvent/>
 <ShutdownGameEvent/>
