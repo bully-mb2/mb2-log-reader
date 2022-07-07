@@ -1,10 +1,7 @@
 <xs:schema version="1.5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="AdminSayEvent">
+    <xs:element name="FragLimitHitEvent">
         <xs:complexType>
-            <xs:all>
-                <xs:element name="message" type="xs:string"/>
-            </xs:all>
         </xs:complexType>
     </xs:element>
 
