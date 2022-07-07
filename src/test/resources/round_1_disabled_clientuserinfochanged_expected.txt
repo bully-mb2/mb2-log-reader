@@ -122,5 +122,5 @@
     <message>!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change</message>
 </AdminSayEvent>
 <SendingGameReportEvent/>
-<FragLimitReachedEvent/>
+<FragLimitHitEvent/>
 <ShutdownGameEvent/>
