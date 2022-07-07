@@ -307,6 +307,7 @@
 </ClientUserinfoChangedEvent>
 <ClientSpawnedEvent>
     <slot>0</slot>
+    <team>imperial</team>
     <force_powers>
         <mb_class>bounty_hunter</mb_class>
         <perks>030000020000031330</perks>
