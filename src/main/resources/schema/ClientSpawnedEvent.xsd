@@ -1,4 +1,4 @@
-<xs:schema version="1.3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema version="1.5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:include schemaLocation="Shared.xsd"/>
 
@@ -27,6 +27,7 @@
                 <xs:element name="char_color_green" type="xs:int"/>
                 <xs:element name="char_color_blue" type="xs:int"/>
                 <xs:element name="jp" type="xs:int"/>
+                <xs:element name="ja_guid" type="xs:string"/>
                 <xs:element name="team_task" type="xs:int"/>
                 <xs:element name="pb_indicator" type="xs:boolean"/>
                 <xs:element name="team_overlay" type="xs:boolean"/>

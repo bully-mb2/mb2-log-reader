@@ -18,6 +18,7 @@ public class MBParser {
 
     private final List<MBEventParser<?>> parserList;
     private Marshaller marshaller;
+    private String objectSuffix;
 
     public MBParser() {
         this.parserList = new ArrayList<>();
@@ -29,10 +30,9 @@ public class MBParser {
         try {
             JAXBContext context = JAXBContext.newInstance("generated");
             marshaller = context.createMarshaller();
-            if (settings.getBoolean("parser.verbose")) {
-                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            }
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, settings.getBoolean("parser.verbose"));
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
+            objectSuffix = settings.getBoolean("parser.verbose") ? "\n" : "";
         } catch (JAXBException e) {
             throw new RuntimeException("Failed to initialize marshaller", e);
         }
@@ -52,6 +52,7 @@ public class MBParser {
         parserList.add(new SendingGameReportParser());
         parserList.add(new ServerInitializationParser());
         parserList.add(new ShutdownGameParser());
+        parserList.add(new FragLimitHitParser());
         LOG.info("Registered " + parserList.size() + " parsers: ");
         for (MBEventParser<?> parser : parserList) {
             LOG.info("   - " + parser.getClass().getSimpleName());
@@ -66,7 +67,7 @@ public class MBParser {
                 Object result = parser.parseLine(line);
                 if (result != null){
                     marshaller.marshal(result, writer);
-                    return writer.toString();
+                    return writer + objectSuffix;
                 }
             }
         } catch (JAXBException e) {

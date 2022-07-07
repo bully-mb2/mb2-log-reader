@@ -43,6 +43,7 @@ public class ClientSpawnedParser extends MBEventParser<ClientSpawnedEvent> {
             clientSpawnedEvent.setCharColorGreen(userinfo.getInt("char_color_green"));
             clientSpawnedEvent.setCharColorBlue(userinfo.getInt("char_color_blue"));
             clientSpawnedEvent.setJp(userinfo.getInt("jp"));
+            clientSpawnedEvent.setJaGuid(userinfo.getString("ja_guid"));
             clientSpawnedEvent.setPbIndicator(userinfo.getBoolean("pbindicator"));
             clientSpawnedEvent.setTeamTask(userinfo.getInt("teamtask"));
             clientSpawnedEvent.setTeamOverlay(userinfo.getBoolean("teamoverlay"));
