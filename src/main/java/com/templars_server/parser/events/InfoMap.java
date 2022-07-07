@@ -39,19 +39,23 @@ public class InfoMap {
         String value = getString(key);
         try {
             return Team.fromValue(value);
-        } catch (IllegalArgumentException e) {
-            if (value == null) {
-                return null;
-            }
+        } catch (IllegalArgumentException ignored) {
+        }
 
-            switch (value) {
-                case "1":
-                    return Team.REBEL;
-                case "2":
-                    return Team.IMPERIAL;
-                case "3":
-                    return Team.SPECTATOR;
-            }
+        if (value == null) {
+            return null;
+        }
+
+        switch (value) {
+            case "1":
+            case "r":
+                return Team.REBEL;
+            case "2":
+            case "b":
+                return Team.IMPERIAL;
+            case "3":
+            case "s":
+                return Team.SPECTATOR;
         }
 
         return null;
