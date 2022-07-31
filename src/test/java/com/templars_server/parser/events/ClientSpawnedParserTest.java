@@ -215,6 +215,15 @@ class ClientSpawnedParserTest {
     }
 
     @Test
+    void testParseLine_LineWithInvalidNumbers_NoExceptionsNotNull() {
+        String testLine = "Player 20 spawned with userinfo: \\team\\b\\name\\Padawan[1]\\forcepowers\\asdf\\ip\\asdf\\rate\\d\\snaps\\a\\model\\palpatine/sith\\color1\\a\\color2\\f\\handicap\\a\\sex\\male\\cg_predictItems\\a\\saber1\\single_1\\saber2\\none\\char_color_red\\a\\char_color_green\\a\\char_color_blue\\a\\jp\\a\\color3\\kyle\\color4\\kyle\\teamtask\\a\\pbindicator\\dfa\\teamoverlay\\asdf";
+
+        ClientSpawnedEvent actualEvent = clientSpawnedParser.parseLine(testLine);
+
+        assertThat(actualEvent).isNotNull();
+    }
+
+    @Test
     void testParseLine_InvalidLine_IsNull() {
         String testLine = "ClientUserinfoChanged: 2 n\\Padawan\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
                 "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
