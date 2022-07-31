@@ -23,15 +23,19 @@ public class InfoMap {
         return data.get(key);
     }
 
-    public int getInt(String key) throws NumberFormatException {
+    public int getInt(String key) {
         if (data.containsKey(key)) {
-            return Integer.parseInt(data.get(key));
+            try {
+                return Integer.parseInt(data.get(key));
+            } catch (NumberFormatException e) {
+                return 0;
+            }
         }
 
         return 0;
     }
 
-    public boolean getBoolean(String key) throws NumberFormatException {
+    public boolean getBoolean(String key) {
         return getInt(key) == 1;
     }
 
@@ -39,19 +43,23 @@ public class InfoMap {
         String value = getString(key);
         try {
             return Team.fromValue(value);
-        } catch (IllegalArgumentException e) {
-            if (value == null) {
-                return null;
-            }
+        } catch (IllegalArgumentException ignored) {
+        }
 
-            switch (value) {
-                case "1":
-                    return Team.REBEL;
-                case "2":
-                    return Team.IMPERIAL;
-                case "3":
-                    return Team.SPECTATOR;
-            }
+        if (value == null) {
+            return null;
+        }
+
+        switch (value) {
+            case "1":
+            case "r":
+                return Team.REBEL;
+            case "2":
+            case "b":
+                return Team.IMPERIAL;
+            case "3":
+            case "s":
+                return Team.SPECTATOR;
         }
 
         return null;
@@ -87,7 +95,7 @@ public class InfoMap {
         }
     }
 
-    public ForcePowers getForcePowers(String key) throws NumberFormatException {
+    public ForcePowers getForcePowers(String key) {
         String value = getString(key);
         if (value == null) {
             return null;
@@ -98,12 +106,15 @@ public class InfoMap {
             return null;
         }
 
-        int mbClassValue = Integer.parseInt(String.format("%s%s", split[0], split[1]));
-
-        ForcePowers forcePowers = new ForcePowers();
-        forcePowers.setMbClass(mbClassFromString("" + mbClassValue));
-        forcePowers.setPerks(split[2]);
-        return forcePowers;
+        try {
+            int mbClassValue = Integer.parseInt(String.format("%s%s", split[0], split[1]));
+            ForcePowers forcePowers = new ForcePowers();
+            forcePowers.setMbClass(mbClassFromString("" + mbClassValue));
+            forcePowers.setPerks(split[2]);
+            return forcePowers;
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
     private MBClass mbClassFromString(String value) {
