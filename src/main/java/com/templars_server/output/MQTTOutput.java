@@ -27,6 +27,7 @@ public class MQTTOutput implements Output {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setAutomaticReconnect(true);
         options.setCleanSession(true);
+        options.setMaxInflight(200);
         options.setConnectionTimeout(10);
 
         try {
