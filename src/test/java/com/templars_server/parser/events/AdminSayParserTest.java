@@ -18,7 +18,7 @@ class AdminSayParserTest {
     @Test
     void testParseLine_ValidLine_ExpectedSlot() {
         String testMessage = "!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change";
-        String testLine = String.format("say: Admin: %s", testMessage);
+        String testLine = String.format("SMOD say: Padawan (adminID: 1) (IP: 666.666.666.666:29070) : %s", testMessage);
 
         AdminSayEvent actualEvent = adminSayParser.parseLine(testLine);
 
@@ -37,7 +37,8 @@ class AdminSayParserTest {
 
     @Test
     void testParseLine_InvalidLinePartiallyContainingRegex_IsNull() {
-        String testLine = "ClientUserinfoChanged: 2 n\\say: Admin: test\"test\"\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
+        String testLine = "ClientUserinfoChanged: 2 n\\SMOD say: Padawan (adminID: 1) (IP: 666.666.666.666:29070) : !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change\n" +
+                "^1Admin\u0019: !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change\"test\"\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255" +
                 "\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
         AdminSayEvent actualEvent = adminSayParser.parseLine(testLine);

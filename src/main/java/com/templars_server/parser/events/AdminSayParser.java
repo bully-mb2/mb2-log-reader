@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class AdminSayParser extends MBEventParser<AdminSayEvent> {
 
     public AdminSayParser() {
-        super("^say: Admin: (.+)$");
+        super("^SMOD say: .* \\(adminID: [0-9]{1,2}\\) \\(IP: .*\\) : (.*)$");
     }
 
     @Override

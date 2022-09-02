@@ -359,6 +359,14 @@
         <name>MOD_REAL_THERMAL</name>
     </weapon>
 </KillEvent>
+<KillEvent>
+    <killer>0</killer>
+    <victim>0</victim>
+    <weapon>
+        <id>7</id>
+        <name>MOD_SUICIDE</name>
+    </weapon>
+</KillEvent>
 <AdminSayEvent>
     <message>!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change</message>
 </AdminSayEvent>
