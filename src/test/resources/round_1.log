@@ -153,6 +153,7 @@ Padawan^7: test
 0: sayteam: Padawan: "test team"
 (Padawan): tker
 Kill: 0 0 68: Padawan killed Padawan by MOD_REAL_THERMAL
+Kill: 0 0 7: Padawan teamkilled Padawan by MOD_SUICIDE
 SMOD say: Padawan (adminID: 1) (IP: 666.666.666.666:29070) : !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change
 ^1Admin: !poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change
 Sending Game Report
