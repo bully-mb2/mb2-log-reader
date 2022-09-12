@@ -1,6 +1,6 @@
 package com.templars_server.parser.events;
 
-import generated.ClientSpawnedEvent;
+import com.templars_server.mb2_log_reader.schema.ClientSpawnedEvent;
 
 import java.util.regex.Matcher;
 

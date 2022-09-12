@@ -1,7 +1,7 @@
 package com.templars_server.parser.events;
 
-import generated.ChatChannel;
-import generated.SayEvent;
+import com.templars_server.mb2_log_reader.schema.ChatChannel;
+import com.templars_server.mb2_log_reader.schema.SayEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
