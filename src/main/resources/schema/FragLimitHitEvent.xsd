@@ -1,8 +1,0 @@
-<xs:schema version="1.5.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-    <xs:element name="FragLimitHitEvent">
-        <xs:complexType>
-        </xs:complexType>
-    </xs:element>
-
-</xs:schema>
