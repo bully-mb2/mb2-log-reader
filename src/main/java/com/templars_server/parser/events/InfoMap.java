@@ -1,9 +1,9 @@
 package com.templars_server.parser.events;
 
-import generated.ForcePowers;
-import generated.Gender;
-import generated.MBClass;
-import generated.Team;
+import com.templars_server.mb2_log_reader.schema.ForcePowers;
+import com.templars_server.mb2_log_reader.schema.Gender;
+import com.templars_server.mb2_log_reader.schema.MBClass;
+import com.templars_server.mb2_log_reader.schema.Team;
 
 import java.util.HashMap;
 

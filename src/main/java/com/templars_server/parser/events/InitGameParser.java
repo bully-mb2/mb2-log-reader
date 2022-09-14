@@ -1,6 +1,6 @@
 package com.templars_server.parser.events;
 
-import generated.InitGameEvent;
+import com.templars_server.mb2_log_reader.schema.InitGameEvent;
 
 import java.util.regex.Matcher;
 

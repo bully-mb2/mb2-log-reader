@@ -1,6 +1,6 @@
 package com.templars_server.parser.events;
 
-import generated.ShutdownGameEvent;
+import com.templars_server.mb2_log_reader.schema.ShutdownGameEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package com.templars_server.parser.events;
 
-import generated.ClientDisconnectEvent;
+import com.templars_server.mb2_log_reader.schema.ClientDisconnectEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

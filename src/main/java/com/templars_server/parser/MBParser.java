@@ -28,7 +28,7 @@ public class MBParser {
     public void init(Settings settings) {
         LOG.info("Initializing marshaller");
         try {
-            JAXBContext context = JAXBContext.newInstance("generated");
+            JAXBContext context = JAXBContext.newInstance("com.templars_server.mb2_log_reader.schema");
             marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, settings.getBoolean("parser.verbose"));
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
