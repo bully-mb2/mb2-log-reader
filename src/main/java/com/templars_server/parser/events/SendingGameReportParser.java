@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 public class SendingGameReportParser extends MBEventParser<SendingGameReportEvent> {
 
     public SendingGameReportParser() {
-        super("^Sending Game Report$");
+        super("^(?:Sending|Saving) Game Report$");
     }
 
     @Override
