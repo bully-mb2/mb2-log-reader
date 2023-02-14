@@ -370,6 +370,328 @@
 <AdminSayEvent>
     <message>!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change</message>
 </AdminSayEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>Padawan</admin_name>
+    <admin_ip>666.666.666.666</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>say</command>
+    <args>!poll Shogun_FA Nightmare_FA Enclave_FA Dxun_FA Doomgiver_FA Dont_Change</args>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
 <SendingGameReportEvent/>
 <FragLimitHitEvent/>
 <ShutdownGameEvent/>
+<AdminSayEvent>
+    <message>test</message>
+</AdminSayEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>say</command>
+    <args>test</args>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>smsay</command>
+    <args>test</args>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>kick</command>
+    <target_slot>1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y[1]</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29071</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>nextmap</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>map</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>maprestart</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>newround</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>mbmode</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>mbmode</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>ban</command>
+    <target_slot>0</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29071</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>mbmode</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>ban</command>
+    <target_slot>0</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29071</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>removeban</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>removeban</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>removeban</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>tempban</command>
+    <args>5</args>
+    <target_slot>0</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29071</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>removetempban</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>forceteam</command>
+    <args>r</args>
+    <target_slot>1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y[1]</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29070</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>forceteam</command>
+    <args>b</args>
+    <target_slot>1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y[1]</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29070</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>forceteam</command>
+    <args>s</args>
+    <target_slot>1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y[1]</target_name>
+    <target_ip>127.0.0.1</target_ip>
+    <target_port>29070</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>vstr</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>shuffle</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_name>^7|^0+^7| ^0B^7ull^0y[1]</admin_name>
+    <admin_ip>127.0.0.1</admin_ip>
+    <admin_port>29070</admin_port>
+    <command>newround</command>
+    <target_slot>-1</target_slot>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>mute</command>
+    <args>10</args>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>unmute</command>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>settk</command>
+    <args>599</args>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>settk</command>
+    <args>0</args>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>marktk</command>
+    <args>10</args>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>
+<SmodEvent>
+    <admin_slot>-1</admin_slot>
+    <admin_id>1</admin_id>
+    <admin_port>0</admin_port>
+    <command>unmarktk</command>
+    <target_slot>-1</target_slot>
+    <target_name>^7|^0+^7| ^0B^7ull^0y</target_name>
+    <target_port>0</target_port>
+</SmodEvent>

@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Application {
 
@@ -44,10 +45,12 @@ public class Application {
             try {
                 line = input.readLine();
                 LOG.debug(line);
-                String xml = parser.parseLine(line);
-                if (xml != null) {
-                    LOG.debug("\n" + xml);
-                    output.writeMessage(xml);
+                List<String> events = parser.parseLine(line);
+                for (String xml : events) {
+                    if (xml != null) {
+                        LOG.debug("\n" + xml);
+                        output.writeMessage(xml);
+                    }
                 }
             } catch (Exception e) {
                 LOG.error("Uncaught exception while parsing. Last known line: " + line, e);

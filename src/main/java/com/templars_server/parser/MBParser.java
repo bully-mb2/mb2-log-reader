@@ -53,6 +53,10 @@ public class MBParser {
         parserList.add(new ServerInitializationParser());
         parserList.add(new ShutdownGameParser());
         parserList.add(new FragLimitHitParser());
+        parserList.add(new SmodParser());
+        parserList.add(new SmodSayParser());
+        parserList.add(new SmodSpecialParser());
+        parserList.add(new SmodTargetedParser());
         LOG.info("Registered " + parserList.size() + " parsers: ");
         for (MBEventParser<?> parser : parserList) {
             LOG.info("   - " + parser.getClass().getSimpleName());
@@ -60,21 +64,23 @@ public class MBParser {
         LOG.info("Ready to parse messages");
     }
 
-    public String parseLine(String line) {
+    public List<String> parseLine(String line) {
+        List<String> events = new ArrayList<>();
         try {
-            StringWriter writer = new StringWriter();
             for (MBEventParser<?> parser : parserList) {
                 Object result = parser.parseLine(line);
                 if (result != null){
+                    StringWriter writer = new StringWriter();
                     marshaller.marshal(result, writer);
-                    return writer + objectSuffix;
+                    events.add(writer + objectSuffix);
+                    writer.flush();
                 }
             }
         } catch (JAXBException e) {
             LOG.error("Couldn't marshal line, is your schema up to date?", e);
         }
 
-        return null;
+        return events;
     }
 
 }

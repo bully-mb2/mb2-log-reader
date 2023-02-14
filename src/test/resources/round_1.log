@@ -159,6 +159,36 @@ SMOD say: Padawan (adminID: 1) (IP: 666.666.666.666:29070) : !poll Shogun_FA Nig
 Sending Game Report
 Exit: Kill limit hit.
 ShutdownGame:
+Successful SMOD login by ^7|^0+^7| ^0B^7ull^0y (adminID: 1) (IP: 127.0.0.1:29070)
+SMOD say: ^7|^0+^7| ^0B^7ull^0y (adminID: 1) (IP: 127.0.0.1:29070) : test
+SMOD smsay: ^7|^0+^7| ^0B^7ull^0y (adminID: 1) (IP: 127.0.0.1:29070): test
+SMOD command (kick) executed by ^7|^0+^7| ^0B^7ull^0y(adminID: 1) (IP: 127.0.0.1:29070) against 1 (1 resolved to ^7|^0+^7| ^0B^7ull^0y[1] (IP: 127.0.0.1:29071)
+SMOD command (nextmap) executed by ^7|^0+^7| ^0B^7ull^0y(adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (map) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (maprestart) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (newround) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (mbmode) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (mbmode) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (ban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 0 (0 resolved to ^7|^0+^7| ^0B^7ull^0y (IP: 127.0.0.1:29071)
+SMOD command (mbmode) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (ban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 0 (0 resolved to ^7|^0+^7| ^0B^7ull^0y (IP: 127.0.0.1:29071)
+SMOD command (removeban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (removeban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (removeban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (tempban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 0 5 (0 resolved to ^7|^0+^7| ^0B^7ull^0y (IP: 127.0.0.1:29071)
+SMOD command (removetempban) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (forceteam) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 1 r (1 resolved to ^7|^0+^7| ^0B^7ull^0y[1] (IP: 127.0.0.1:29070)
+SMOD command (forceteam) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 1 b (1 resolved to ^7|^0+^7| ^0B^7ull^0y[1] (IP: 127.0.0.1:29070)
+SMOD command (forceteam) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070) against 1 s (1 resolved to ^7|^0+^7| ^0B^7ull^0y[1] (IP: 127.0.0.1:29070)
+SMOD command (vstr) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (shuffle) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+SMOD command (newround) executed by ^7|^0+^7| ^0B^7ull^0y[1](adminID: 1) (IP: 127.0.0.1:29070)
+Server^7: ^7|^0+^7| ^0B^7ull^0y ^7was ^1muted ^7for ^310 minute(s) ^7by Admin ^3#1
+Server^7: ^7|^0+^7| ^0B^7ull^0y ^7was ^1unmuted ^7by Admin ^3#1
+Server^7: ^7TK points of ^7|^0+^7| ^0B^7ull^0y ^7were set to ^3599 ^7by Admin ^3#1
+Server^7: ^7TK points of ^7|^0+^7| ^0B^7ull^0y ^7were set to ^30 ^7by Admin ^3#1
+Server^7: ^7|^0+^7| ^0B^7ull^0y ^7put on ^1TK probation ^7for ^310 minute(s) ^7by Admin ^3#1
+Server^7: ^7|^0+^7| ^0B^7ull^0y ^7removed from ^1TK probation ^7by Admin ^3#1
 ------------------------------------------------------------
 VM_CreateLegacy: jampgamei386.so succeeded
 GAME: Initializing Unhandled Exception Filter

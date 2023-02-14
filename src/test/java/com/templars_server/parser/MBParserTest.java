@@ -30,19 +30,21 @@ class MBParserTest {
         StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {
-            String object = mbParser.parseLine(line);
-            if (object == null) {
+            List<String> events = mbParser.parseLine(line);
+            if (events.isEmpty()) {
                 continue;
             }
 
-            actualEvents.add(object);
-            actualLog.write(object);
+            for (String xml : events) {
+                actualEvents.add(xml);
+                actualLog.write(xml);
+            }
         }
 
         String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_expected.txt");
 
-        assertThat(actualEvents).hasSize(32);
-        assertThat(expectedLog).isEqualToIgnoringNewLines(actualLog.toString());
+        assertThat(actualEvents).hasSize(63);
+        assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
     @Test
@@ -55,19 +57,21 @@ class MBParserTest {
         StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {
-            String object = mbParser.parseLine(line);
-            if (object == null) {
+            List<String> events = mbParser.parseLine(line);
+            if (events.isEmpty()) {
                 continue;
             }
 
-            actualEvents.add(object);
-            actualLog.write(object);
+            for (String xml : events) {
+                actualEvents.add(xml);
+                actualLog.write(xml);
+            }
         }
 
         String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_verbose_expected.txt");
 
-        assertThat(actualEvents).hasSize(32);
-        assertThat(expectedLog).isEqualToIgnoringNewLines(actualLog.toString());
+        assertThat(actualEvents).hasSize(63);
+        assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
     @Test
@@ -80,19 +84,21 @@ class MBParserTest {
         StringWriter actualLog = new StringWriter();
         List<Object> actualEvents = new ArrayList<>();
         for (String line : loadResourceAsString(MBParserTest.class, "round_1.log").split("\n")) {
-            String object = mbParser.parseLine(line);
-            if (object == null) {
+            List<String> events = mbParser.parseLine(line);
+            if (events.isEmpty()) {
                 continue;
             }
 
-            actualEvents.add(object);
-            actualLog.write(object);
+            for (String xml : events) {
+                actualEvents.add(xml);
+                actualLog.write(xml);
+            }
         }
 
         String expectedLog = loadResourceAsString(MBParserTest.class, "round_1_disabled_clientuserinfochanged_expected.txt");
 
-        assertThat(actualEvents).hasSize(16);
-        assertThat(expectedLog).isEqualToIgnoringNewLines(actualLog.toString());
+        assertThat(actualEvents).hasSize(47);
+        assertThat(actualLog.toString()).isEqualToIgnoringNewLines(expectedLog);
     }
 
 }
