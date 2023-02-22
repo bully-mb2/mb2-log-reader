@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 public class SmodTargetedParser extends MBEventParser<SmodEvent> {
 
     public SmodTargetedParser() {
-        super("^SMOD command \\((.*)\\) executed by (.*)\\(adminID: ([0-9]{1,2})\\) \\(IP: (.*?):([0-9]*)\\) against ([0-9]{1,2})(?: (.*))? \\([0-9]{1,2} resolved to (.*) \\(IP: (.*):([0-9]*)\\)$");
+        super("^SMOD command \\((.*)\\) executed by (.*)\\(adminID: ([0-9]{1,2})\\) \\(IP: (.*?):([0-9]*)\\) against (\\w+|[0-9]+) ?(\\w+)? \\(\\w+ resolved to (.*) \\(IP: (.*):([0-9]*)\\)$");
     }
 
     @Override
@@ -21,7 +21,12 @@ public class SmodTargetedParser extends MBEventParser<SmodEvent> {
             smodEvent.setAdminPort(Integer.parseInt(matcher.group(5)));
             smodEvent.setCommand(matcher.group(1));
             smodEvent.setArgs(matcher.group(7));
-            smodEvent.setTargetSlot(Integer.parseInt(matcher.group(6)));
+            try {
+                smodEvent.setTargetSlot(Integer.parseInt(matcher.group(6)));
+            } catch (NumberFormatException ignored) {
+                smodEvent.setTargetSlot(-1);
+            }
+
             smodEvent.setTargetName(matcher.group(8));
             smodEvent.setTargetIp(matcher.group(9));
             smodEvent.setTargetPort(Integer.parseInt(matcher.group(10)));

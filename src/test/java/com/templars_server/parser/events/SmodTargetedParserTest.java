@@ -75,6 +75,36 @@ public class SmodTargetedParserTest {
     }
 
     @Test
+    void testParseLine_ValidLineNameResolveTarget_ExpectedValues() {
+        String testCommand = "ban";
+        String testAdminName = "^7|^0+^7| ^0B^7ull^0y";
+        int testAdminId = 1;
+        String testAdminIp = "127.0.0.1";
+        int testAdminPort = 29070;
+        String testResolveName = "target";
+        String testArg = "r";
+        String testTargetName = "^1Target";
+        String testTargetIp = "127.0.0.2";
+        int testTargetPort = 29071;
+        String testLine = "SMOD command (" + testCommand + ") executed by " + testAdminName + "(adminID: " + testAdminId + ") (IP: " + testAdminIp + ":" + testAdminPort + ") " +
+                "against " + testResolveName + " " + testArg + " (" + testResolveName + " resolved to " + testTargetName + " (IP: " + testTargetIp + ":" + testTargetPort + ")";
+
+        SmodEvent actualEvent = smodTargetedParser.parseLine(testLine);
+
+        assertThat(actualEvent).isNotNull();
+        assertThat(actualEvent.getCommand()).isEqualTo(testCommand);
+        assertThat(actualEvent.getAdminName()).isEqualTo(testAdminName);
+        assertThat(actualEvent.getAdminId()).isEqualTo(testAdminId);
+        assertThat(actualEvent.getAdminIp()).isEqualTo(testAdminIp);
+        assertThat(actualEvent.getAdminPort()).isEqualTo(testAdminPort);
+        assertThat(actualEvent.getTargetSlot()).isEqualTo(-1);
+        assertThat(actualEvent.getArgs()).isEqualTo(testArg);
+        assertThat(actualEvent.getTargetName()).isEqualTo(testTargetName);
+        assertThat(actualEvent.getTargetIp()).isEqualTo(testTargetIp);
+        assertThat(actualEvent.getTargetPort()).isEqualTo(testTargetPort);
+    }
+
+    @Test
     void testParseLine_InvalidLine_IsNull() {
         String testLine = "ClientUserinfoChanged: 2 n\\Padawan\\t\\2\\m\\maul_cyber/default\\c1\\2949375\\c2\\255\\sc\\none\\s1\\saber_maul2\\s2\\none\\sdt\\2\\v\\0\\s\\0\\mbc\\5";
 
